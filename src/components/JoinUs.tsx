@@ -22,7 +22,7 @@ export function JoinUs() {
               Our team will review your application and contact you with the next steps.
             </p>
             <a
-              href="https://forms.gle/RjrtbQ34hjFjaJyx8"
+              href="https://forms.gle/13NdfK6b7Mofcjp59"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 transition-colors"
