@@ -18,21 +18,22 @@ export function Contact() {
           <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm">
             <Phone className="h-8 w-8 text-yellow-500" />
             <h3 className="mt-4 text-lg font-medium">Phone</h3>
-            <p className="mt-2 text-gray-600">+27 (0) 123 456 789</p>
+            <p className="mt-2 text-gray-600">+27 (0) 734715116</p>
           </div>
 
           <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm">
             <Mail className="h-8 w-8 text-yellow-500" />
             <h3 className="mt-4 text-lg font-medium">Email</h3>
-            <p className="mt-2 text-gray-600">info@inkuthazo.co.za</p>
+            <p className="mt-2 text-gray-600">inkuthazoburialclub@gmail.com</p>
           </div>
 
           <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm">
             <MapPin className="h-8 w-8 text-yellow-500" />
             <h3 className="mt-4 text-lg font-medium">Office</h3>
             <p className="mt-2 text-gray-600 text-center">
-              123 Main Street<br />
-              Johannesburg, 2000<br />
+              Ratanda<br />
+              Heidelberg, 1441<br />
+              Gauteng,<br/>
               South Africa
             </p>
           </div>
