@@ -33,7 +33,7 @@ export function Navigation() {
                 </div> */}
             {/* <img src= {  logo} alt="Logo" className="h-16 w-16 text-yellow-500" /> */}
             <Umbrella className="invisible md:visible h-8 w-8 text-yellow-500" />
-            {/* <span className="ml-2 text-xl font-bold">Inhlangano inamandla</span> */}
+            <span className="md:hidden text-xl font-bold">Inkuthazo</span>
 
             <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-3">

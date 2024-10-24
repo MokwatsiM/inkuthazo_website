@@ -13,7 +13,8 @@ export function Hero() {
           className="w-full h-full object-cover opacity-30"
           src=
           // "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=80"
-          {bgImage}
+          "https://rwrmzntjrhjqurqzudum.supabase.co/storage/v1/object/public/images/bg-image.png?auto=format&fit=crop&q=80"
+          // {bgImage}
           alt="Community support"
         />
       </div>
