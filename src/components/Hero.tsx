@@ -2,7 +2,7 @@ import React from 'react';
 import { Shield } from 'lucide-react';
 
 const logo = require("../assets/inkuthazo.jpeg");
-const bgImage = require("../assets/bg-image.png");
+
 
 
 export function Hero() {
