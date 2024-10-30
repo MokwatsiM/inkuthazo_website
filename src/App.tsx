@@ -5,9 +5,13 @@ import { About } from './components/About';
 import { Benefits } from './components/Benefits';
 import { JoinUs } from './components/JoinUs';
 import { Contact } from './components/Contact';
+import Maintenance from './Maintenance';
 
 function App() {
-  return (
+  const isMaintenanceMode = process.env.REACT_APP_MAINTENANCE_MODE === 'true';
+
+  return isMaintenanceMode ? <Maintenance /> 
+   (
     <div className="min-h-screen">
     <Layout>
       <Hero />
