@@ -6,7 +6,6 @@ export default defineCliConfig({
     dataset: 'production',
     
   },
-  studioHost: 'inkuthazo-cms',
   /**
    * Enable auto-updates for studios.
    * Learn more at https://www.sanity.io/docs/cli#auto-updates
