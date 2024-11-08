@@ -1,18 +1,42 @@
-import React from 'react';
+import  { useEffect, useState } from 'react';
 import { History, Users, Heart } from 'lucide-react';
+import { PortableText } from '@portabletext/react'
+import { client, } from '../lib/sanity'
+
+
+interface MissionData {
+  title: string;
+  content: any[];
+}
 
 export function About() {
+  const [missionData, setMissionData] = useState<MissionData | null>(null)
+
+  useEffect(() => {
+    const query = `*[_type == "mission"][0] {
+      title,
+      content
+    }`
+
+    client.fetch(query).then((data) => {
+      setMissionData(data)
+    })
+  }, [])
+
+  if (!missionData) return null
   return (
     <section id="about" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-            Our Mission
+            {missionData.title}
+            {/* Our Mission */}
           </h2>
         </div>
         
         <div className="mt-12 prose prose-lg max-w-4xl mx-auto text-gray-500">
-          <p>
+          <PortableText value={missionData.content} />
+          {/* <p>
             Until recently burial societies in South Africa were associated with the elderly, but these
             days many young people also join burial societies. One cannot deny the fact that burial
             societies are able to help in situations where money is needed expeditiously because
@@ -36,7 +60,7 @@ export function About() {
             assist our esteemed members to absorb some of the costs associated with funerals.
             Inkuthazo is fully autonomous and with a specific goal of providing social relief and
             support (material and non-material) to a member or member's family in bereavement.
-          </p>
+          </p> */}
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
