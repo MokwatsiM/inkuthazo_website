@@ -50,7 +50,7 @@ useEffect(() => {
         <div className="text-center">
            <div className="h-20 w-20 text-yellow-500 mx-auto mb-4 " />
           {/* <Shield className="h-16 w-16 text-yellow-500 mx-auto mb-4" /> */}
-          <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="text-3xl font-extrabold  tracking-widest text-white lg:text-5xl">
             
             {heroData.title}
            
