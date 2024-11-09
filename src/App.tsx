@@ -7,6 +7,7 @@ import { JoinUs } from "./components/JoinUs";
 import { Contact } from "./components/Contact";
 import { Maintenance } from "./components/Maintanance";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   const isMaintenanceMode = process.env.REACT_APP_MAINTENANCE_MODE === "true";
@@ -25,7 +26,8 @@ function App() {
         <JoinUs />
         <Contact />
       </Layout>
-      <SpeedInsights />
+        <SpeedInsights />
+        <Analytics/>
     </div>
   );
 }
