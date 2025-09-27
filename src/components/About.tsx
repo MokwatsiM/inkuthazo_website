@@ -25,67 +25,54 @@ export function About() {
 
   if (!missionData) return null
   return (
-    <section id="about" className="py-16 bg-white">
+    <section id="about" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-secondary-900 mb-4 tracking-tight animate-slide-up">
             {missionData.title}
-            {/* Our Mission */}
           </h2>
-        </div>
-        
-        <div className="mt-12 prose prose-lg max-w-4xl mx-auto text-gray-500">
-          <PortableText value={missionData.content} />
-          {/* <p>
-            Until recently burial societies in South Africa were associated with the elderly, but these
-            days many young people also join burial societies. One cannot deny the fact that burial
-            societies are able to help in situations where money is needed expeditiously because
-            they are flexible and accommodating.
-          </p>
-          
-          <p>
-            We are raised in communities which value respectable and dignified funerals because of
-            the cultural importance thereon, which is an expensive all-day event.
-          </p>
-
-          <p>
-            Inkuthazo does not exist in a vacuum, but draws the inspiration of its existence from
-            many other burial societies which have existed in African communities since time
-            immemorial. We remain grateful and heavily indebted to our predecessors for paving
-            the way for organizations such as Inkuthazo.
-          </p>
-
-          <p>
-            Inkuthazo is intended to be an informal and independent insurance scheme, designed to
-            assist our esteemed members to absorb some of the costs associated with funerals.
-            Inkuthazo is fully autonomous and with a specific goal of providing social relief and
-            support (material and non-material) to a member or member's family in bereavement.
-          </p> */}
+          <div className="mt-6 w-24 h-1 bg-primary-500 mx-auto rounded-full animate-scale-in"></div>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
-          <div className="text-center">
-            <div className="flex justify-center">
-              <History className="h-12 w-12 text-yellow-500" />
+        {/* Mission Content */}
+        <div className="mb-20">
+          <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-soft p-8 md:p-12 animate-fade-in">
+            <div className="prose prose-lg max-w-none text-secondary-600 leading-relaxed">
+              <PortableText value={missionData.content} />
             </div>
-            <h3 className="mt-4 text-xl font-semibold">Rich Heritage</h3>
-            <p className="mt-2 text-gray-500">Building on generations of community support traditions</p>
           </div>
-          
-          <div className="text-center">
-            <div className="flex justify-center">
-              <Users className="h-12 w-12 text-yellow-500" />
+        </div>
+
+        <div className="mt-20 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="group text-center p-8 bg-white rounded-2xl shadow-soft hover:shadow-medium transition-all duration-300 transform hover:-translate-y-1 animate-slide-up" style={{animationDelay: '0.1s'}}>
+            <div className="flex justify-center mb-6">
+              <div className="w-16 h-16 bg-primary-100 group-hover:bg-primary-500 rounded-2xl flex items-center justify-center transition-all duration-300">
+                <History className="h-8 w-8 text-primary-600 group-hover:text-white transition-colors duration-300" />
+              </div>
             </div>
-            <h3 className="mt-4 text-xl font-semibold">Community Focused</h3>
-            <p className="mt-2 text-gray-500">Supporting families when they need it most</p>
+            <h3 className="text-xl font-bold text-secondary-900 mb-3">Rich Heritage</h3>
+            <p className="text-secondary-600 leading-relaxed">Building on generations of community support traditions</p>
           </div>
-          
-          <div className="text-center">
-            <div className="flex justify-center">
-              <Heart className="h-12 w-12 text-yellow-500" />
+
+          <div className="group text-center p-8 bg-white rounded-2xl shadow-soft hover:shadow-medium transition-all duration-300 transform hover:-translate-y-1 animate-slide-up" style={{animationDelay: '0.2s'}}>
+            <div className="flex justify-center mb-6">
+              <div className="w-16 h-16 bg-primary-100 group-hover:bg-primary-500 rounded-2xl flex items-center justify-center transition-all duration-300">
+                <Users className="h-8 w-8 text-primary-600 group-hover:text-white transition-colors duration-300" />
+              </div>
             </div>
-            <h3 className="mt-4 text-xl font-semibold">Compassionate Care</h3>
-            <p className="mt-2 text-gray-500">Providing both material and emotional support</p>
+            <h3 className="text-xl font-bold text-secondary-900 mb-3">Community Focused</h3>
+            <p className="text-secondary-600 leading-relaxed">Supporting families when they need it most</p>
+          </div>
+
+          <div className="group text-center p-8 bg-white rounded-2xl shadow-soft hover:shadow-medium transition-all duration-300 transform hover:-translate-y-1 animate-slide-up" style={{animationDelay: '0.3s'}}>
+            <div className="flex justify-center mb-6">
+              <div className="w-16 h-16 bg-primary-100 group-hover:bg-primary-500 rounded-2xl flex items-center justify-center transition-all duration-300">
+                <Heart className="h-8 w-8 text-primary-600 group-hover:text-white transition-colors duration-300" />
+              </div>
+            </div>
+            <h3 className="text-xl font-bold text-secondary-900 mb-3">Compassionate Care</h3>
+            <p className="text-secondary-600 leading-relaxed">Providing both material and emotional support</p>
           </div>
         </div>
       </div>
