@@ -1,9 +1,12 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders the hero headline', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: /we rise together/i })).toBeInTheDocument();
+});
+
+test('renders the primary call to action', () => {
+  render(<App />);
+  expect(screen.getAllByRole('link', { name: /become a member/i }).length).toBeGreaterThan(0);
 });

@@ -1,200 +1,94 @@
-import React from 'react';
-import { ExternalLink, CheckCircle, Users, Shield, Heart } from 'lucide-react';
+import { ExternalLink, CheckCircle, MessageCircle } from 'lucide-react';
 
 export function JoinUs() {
-  const steps = [
-    {
-      number: '01',
-      title: 'Complete Application',
-      description: 'Fill out our simple membership application form with your details'
-    },
-    {
-      number: '02',
-      title: 'Review Process',
-      description: 'Our team reviews your application and contacts you within 2 business days'
-    },
-    {
-      number: '03',
-      title: 'Welcome Meeting',
-      description: 'Attend a brief orientation meeting to learn about member benefits'
-    },
-    {
-      number: '04',
-      title: 'Start Your Journey',
-      description: 'Begin enjoying the security and support of our community'
-    }
-  ];
-
-  const features = [
-    {
-      icon: Shield,
-      title: 'Secure Coverage',
-      description: 'Comprehensive financial protection for your family'
-    },
-    {
-      icon: Users,
-      title: 'Community Support',
-      description: 'Join a caring network of like-minded individuals'
-    },
-    {
-      icon: Heart,
-      title: 'Peace of Mind',
-      description: 'Rest assured knowing your loved ones are protected'
-    }
-  ];
-
   return (
-    <section id="join" className="py-20 bg-gradient-to-br from-secondary-50 to-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-secondary-900 mb-4 tracking-tight">
-            Join Inkuthazo Burial Club
+    <section id="join" className="bg-white">
+      <div className="max-w-6xl mx-auto py-10 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1.1fr,0.9fr] gap-10 lg:gap-14 items-start">
+        {/* Left Side - Information */}
+        <div className="space-y-5">
+          <p className="text-xs font-semibold tracking-tight text-accent-600 uppercase">Join Inkuthazo</p>
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900">
+            Ready to be part of our community?
           </h2>
-          <p className="text-xl text-secondary-600 max-w-4xl mx-auto leading-relaxed">
-            Take the first step towards securing peace of mind for you and your family.
-            Join a community that truly cares.
+          <p className="text-base text-stone-600">
+            Take the first step towards being part of a community that celebrates together, grows
+            together, and supports each other through everything in between.
           </p>
-          <div className="mt-6 w-24 h-1 bg-primary-500 mx-auto rounded-full"></div>
-        </div>
 
-        {/* Process Steps */}
-        <div className="mb-20">
-          <h3 className="text-2xl font-bold text-secondary-900 text-center mb-12">
-            Simple 4-Step Process
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {steps.map((step, index) => (
-              <div
-                key={step.number}
-                className="relative text-center animate-slide-up"
-                style={{animationDelay: `${index * 0.1}s`}}
-              >
-                {/* Step Number */}
-                <div className="mb-6 flex justify-center">
-                  <div className="w-16 h-16 bg-primary-500 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-medium">
-                    {step.number}
-                  </div>
-                </div>
-
-                {/* Step Content */}
-                <div className="space-y-3">
-                  <h4 className="text-lg font-bold text-secondary-900">
-                    {step.title}
-                  </h4>
-                  <p className="text-secondary-600 text-sm leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-
-                {/* Connector Line */}
-                {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-primary-300 to-transparent transform -translate-x-8"></div>
-                )}
-              </div>
-            ))}
+          {/* What to Expect Box */}
+          <div className="rounded-2xl border border-stone-200 bg-stone-50 p-4 space-y-3">
+            <p className="text-sm font-semibold tracking-tight text-stone-900">What to expect after you apply</p>
+            <ul className="space-y-2 text-sm text-stone-600">
+              <li className="flex gap-2">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-accent-500 flex-shrink-0"></span>
+                A call or message from a committee member to answer your questions
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-accent-500 flex-shrink-0"></span>
+                Information about membership, events, and contribution options
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-accent-500 flex-shrink-0"></span>
+                An invitation to our next meetup or orientation session
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-accent-500 flex-shrink-0"></span>
+                Guidance on next steps to complete your membership
+              </li>
+            </ul>
           </div>
         </div>
 
-        {/* Main CTA Section */}
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-3xl shadow-strong p-8 md:p-12 animate-scale-in">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left Side - Features */}
-              <div className="space-y-8">
-                <div>
-                  <h3 className="text-2xl font-bold text-secondary-900 mb-4">
-                    Why Choose Inkuthazo?
-                  </h3>
-                  <p className="text-secondary-600 leading-relaxed">
-                    Join hundreds of families who trust us to provide dignified support
-                    during life's most difficult moments.
-                  </p>
-                </div>
+        {/* Right Side - Application CTA */}
+        <div className="rounded-2xl border border-stone-200 bg-gradient-to-br from-primary-50 to-accent-50 p-4 sm:p-5 space-y-4">
+          <h3 className="text-sm font-semibold tracking-tight text-stone-900">Application form</h3>
 
-                <div className="space-y-6">
-                  {features.map((feature, index) => {
-                    const IconComponent = feature.icon;
-                    return (
-                      <div
-                        key={feature.title}
-                        className="flex items-start space-x-4 animate-slide-up"
-                        style={{animationDelay: `${0.5 + index * 0.1}s`}}
-                      >
-                        <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                          <IconComponent className="h-6 w-6 text-primary-600" />
-                        </div>
-                        <div>
-                          <h4 className="text-lg font-semibold text-secondary-900 mb-1">
-                            {feature.title}
-                          </h4>
-                          <p className="text-secondary-600 text-sm">
-                            {feature.description}
-                          </p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
+          <div className="space-y-4 py-4">
+            <p className="text-sm text-stone-600">
+              Complete our membership application form to begin your journey with
+              Inkuthazo Social Club. Our team will review and contact you with the next steps.
+            </p>
+
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3 text-stone-700">
+                <CheckCircle className="h-5 w-5 text-accent-600 flex-shrink-0" />
+                <span className="text-sm">Free consultation included</span>
               </div>
-
-              {/* Right Side - Application Form */}
-              <div className="bg-gradient-to-br from-primary-500 to-primary-600 p-8 rounded-2xl text-white">
-                <div className="text-center space-y-6">
-                  <div>
-                    <h3 className="text-2xl font-bold mb-4">Ready to Begin?</h3>
-                    <p className="text-primary-100 leading-relaxed">
-                      Complete our membership application form to begin your journey with
-                      Inkuthazo Burial Club. Our team will review your application and
-                      contact you with the next steps.
-                    </p>
-                  </div>
-
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-3 text-primary-100">
-                      <CheckCircle className="h-5 w-5" />
-                      <span className="text-sm">Free consultation included</span>
-                    </div>
-                    <div className="flex items-center space-x-3 text-primary-100">
-                      <CheckCircle className="h-5 w-5" />
-                      <span className="text-sm">No hidden fees or charges</span>
-                    </div>
-                    <div className="flex items-center space-x-3 text-primary-100">
-                      <CheckCircle className="h-5 w-5" />
-                      <span className="text-sm">Flexible payment options</span>
-                    </div>
-                  </div>
-
-                  <a
-                    href="https://forms.gle/13NdfK6b7Mofcjp59"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-8 py-4 bg-white text-primary-600 font-bold rounded-xl hover:bg-gray-50 transition-all duration-300 transform hover:-translate-y-1 shadow-medium hover:shadow-strong"
-                  >
-                    Complete Application Form
-                    <ExternalLink className="ml-2 h-5 w-5" />
-                  </a>
-
-                  <p className="text-primary-200 text-xs">
-                    Secure application powered by Google Forms
-                  </p>
-                </div>
+              <div className="flex items-center space-x-3 text-stone-700">
+                <CheckCircle className="h-5 w-5 text-accent-600 flex-shrink-0" />
+                <span className="text-sm">No hidden fees or charges</span>
+              </div>
+              <div className="flex items-center space-x-3 text-stone-700">
+                <CheckCircle className="h-5 w-5 text-accent-600 flex-shrink-0" />
+                <span className="text-sm">Flexible payment options</span>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Bottom Support */}
-        <div className="text-center mt-16">
-          <p className="text-secondary-600 mb-4">
-            Have questions about membership? We're here to help.
+          <div className="grid sm:grid-cols-2 gap-3">
+            <a
+              href="https://forms.gle/13NdfK6b7Mofcjp59"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white text-sm font-semibold tracking-tight py-2.5 px-4 shadow-sm hover:shadow-md hover:from-primary-400 hover:to-accent-400 transition-all"
+            >
+              Complete application
+              <ExternalLink className="ml-2 h-4 w-4" />
+            </a>
+            <a
+              href="https://wa.me/27734715116?text=Hi%20Inkuthazo%2C%20I%27d%20like%20to%20learn%20more%20about%20joining%20the%20social%20club."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center rounded-full border border-accent-200 bg-white text-accent-700 text-sm font-semibold tracking-tight py-2.5 px-4 hover:bg-accent-50 transition-colors"
+            >
+              Chat on WhatsApp
+              <MessageCircle className="ml-2 h-4 w-4" />
+            </a>
+          </div>
+
+          <p className="text-[0.7rem] text-stone-500 text-center">
+            Your information will only be used to contact you about Inkuthazo Social Club.
           </p>
-          <a
-            href="#contact"
-            className="text-primary-600 hover:text-primary-700 font-semibold transition-colors duration-200"
-          >
-            Contact our team →
-          </a>
         </div>
       </div>
     </section>

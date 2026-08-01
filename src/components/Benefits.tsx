@@ -1,150 +1,125 @@
 import React from 'react';
-import { CheckCircle } from 'lucide-react';
-import { useEffect, useState } from 'react';
-import { client, urlFor } from '../lib/sanity';
-import { LoadingState } from './LoadingState';
+import {
+  PartyPopper,
+  Wallet,
+  GraduationCap,
+  HeartHandshake,
+  Users,
+  CalendarDays,
+  ShieldCheck,
+  Sparkles,
+} from 'lucide-react';
 
-// import {} from '../../inkuthazo-burial/schemaTypes/benefits'
-
-
-
-interface BenefitData {
-  _id: string;
+interface Benefit {
   title: string;
   description: string;
-  icon?: {
-    asset: {
-      _ref: string;
-    };
-  };
-  svgImage?: {
-    asset: {
-      _ref: string;
-    };
-  };
-  order: number;
+  icon: React.ElementType;
 }
+
+const benefits: Benefit[] = [
+  {
+    icon: PartyPopper,
+    title: 'Vibrant social events',
+    description: 'Regular gatherings, celebrations, and outings that bring members together throughout the year.',
+  },
+  {
+    icon: Wallet,
+    title: 'Community investment programs',
+    description: 'Group savings and investment opportunities that help members build financial security together.',
+  },
+  {
+    icon: GraduationCap,
+    title: 'Personal development',
+    description: 'Workshops and resources designed to help members grow, learn, and reach their goals.',
+  },
+  {
+    icon: HeartHandshake,
+    title: 'A support network that shows up',
+    description: 'Our roots run deep — members can still count on each other in life\'s toughest moments.',
+  },
+  {
+    icon: CalendarDays,
+    title: 'Regular meetups & outings',
+    description: 'From braais to year-end functions, there\'s always something on the calendar to look forward to.',
+  },
+  {
+    icon: Users,
+    title: 'Flexible membership',
+    description: 'Affordable, accommodating contribution options that fit real life.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Transparent management',
+    description: 'Member-led, accountable, and open about how the club is run.',
+  },
+  {
+    icon: Sparkles,
+    title: 'A community you can lean on',
+    description: 'Year-round, in good times and hard ones — that\'s the whole point of Inkuthazo.',
+  },
+];
+
 export function Benefits() {
-  const [benefitData, setBenefits] = useState<BenefitData[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    // Fetch benefits from Sanity
-    const fetchBenefits = async () => {
-      try {
-        const query = `
-          *[_type == "benefit"] | order(order asc) {
-            _id,
-            title,
-            description,
-            icon,
-            svgIcon,
-            order
-          }
-        `;
-
-        const data = await client.fetch<BenefitData[]>(query);
-        setBenefits(data);
-      } catch (err) {
-        setError('Failed to load benefits');
-        console.error('Error fetching benefits:', err);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchBenefits();
-  }, []);
-  const benefits = [
-    'Immediate financial assistance for funeral expenses',
-    'Support from an established community network',
-    'Flexible and accommodating payment terms',
-    'Dignified funeral arrangements',
-    'Additional support services for the bereaved family',
-    'Transparent and accountable management',
-    'Regular community meetings and updates',
-    'Emergency assistance when needed',
-  ];
-
-  if (isLoading) {
-    return <div className="text-center py-8">{LoadingState()}</div>;
-  }
-
-  if (error) {
-    return <div className="text-center text-red-600 py-8">{error}</div>;
-  }
-
-
   return (
-    <section id="benefits" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="benefits" className="border-b border-stone-200 bg-stone-50">
+      <div className="max-w-6xl mx-auto py-10 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-secondary-900 mb-4 tracking-tight">
-            Member Benefits
-          </h2>
-          <p className="text-xl text-secondary-600 max-w-3xl mx-auto leading-relaxed">
-            Join our community and receive comprehensive support during difficult times
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+          <div>
+            <p className="text-xs font-semibold tracking-tight text-accent-600 uppercase">What We Offer</p>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900 mt-2">
+              More ways to connect and grow.
+            </h2>
+          </div>
+          <p className="text-base text-stone-600 max-w-md">
+            Join our community and enjoy events, support, and opportunities designed for our members.
           </p>
-          <div className="mt-6 w-24 h-1 bg-primary-500 mx-auto rounded-full"></div>
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {benefitData.map((benefit, index) => (
-            <div
-              key={benefit._id}
-              className="group bg-white rounded-2xl shadow-soft hover:shadow-strong p-8 transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 animate-slide-up"
-              style={{animationDelay: `${index * 0.1}s`}}
-            >
-              {/* Icon Container */}
-              {benefit.icon && (
-                <div className="mb-6 flex justify-center">
-                  <div className="relative">
-                    <div className="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center group-hover:bg-primary-200 transition-colors duration-300">
-                      <img
-                        src={urlFor(benefit.icon).width(64).height(64).url()}
-                        alt={benefit.title}
-                        className="h-8 w-8 object-contain filter group-hover:scale-110 transition-transform duration-300"
-                      />
-                    </div>
-                    <div className="absolute -inset-1 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {benefits.map((benefit) => {
+            const Icon = benefit.icon;
+            return (
+              <div
+                key={benefit.title}
+                className="rounded-2xl border border-stone-200 bg-white p-4 sm:p-5 space-y-2 hover:shadow-md hover:border-primary-200 transition-all"
+              >
+                {/* Icon Container */}
+                <div className="mb-3">
+                  <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center">
+                    <Icon className="h-6 w-6 text-accent-600" />
                   </div>
                 </div>
-              )}
 
-              {/* Content */}
-              <div className="text-center space-y-4">
-                <h3 className="text-xl font-bold text-secondary-900 group-hover:text-primary-600 transition-colors duration-300">
-                  {benefit.title}
-                </h3>
-
-                <p className="text-secondary-600 leading-relaxed">
-                  {benefit.description}
-                </p>
+                {/* Content */}
+                <div className="space-y-2">
+                  <p className="text-sm font-semibold tracking-tight text-stone-900">
+                    {benefit.title}
+                  </p>
+                  <p className="text-sm text-stone-600">
+                    {benefit.description}
+                  </p>
+                </div>
               </div>
-
-              {/* Hover Accent */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 to-primary-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-b-2xl"></div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Additional Trust Indicators */}
-        <div className="mt-20 pt-16 border-t border-gray-200">
+        <div className="mt-16 pt-12 border-t border-stone-200">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="space-y-2">
-              <div className="text-3xl font-bold text-primary-600">500+</div>
-              <div className="text-secondary-600 font-medium">Active Members</div>
+              <div className="text-3xl font-bold text-accent-600">20+</div>
+              <div className="text-stone-500 font-medium">Active Members</div>
             </div>
             <div className="space-y-2">
-              <div className="text-3xl font-bold text-primary-600">10+</div>
-              <div className="text-secondary-600 font-medium">Years of Service</div>
+              <div className="text-3xl font-bold text-accent-600">3+</div>
+              <div className="text-stone-500 font-medium">Years of Community</div>
             </div>
             <div className="space-y-2">
-              <div className="text-3xl font-bold text-primary-600">100%</div>
-              <div className="text-secondary-600 font-medium">Community Focused</div>
+              <div className="text-3xl font-bold text-accent-600">100%</div>
+              <div className="text-stone-500 font-medium">Member Driven</div>
             </div>
           </div>
         </div>

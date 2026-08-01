@@ -4,7 +4,7 @@ import { Footer } from './Footer';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white text-stone-900">
       <Navigation />
       <main className="overflow-hidden">{children}</main>
       <Footer />

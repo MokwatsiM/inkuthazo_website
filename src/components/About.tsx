@@ -1,78 +1,64 @@
-import  { useEffect, useState } from 'react';
-import { History, Users, Heart } from 'lucide-react';
-import { PortableText } from '@portabletext/react'
-import { client, } from '../lib/sanity'
-
-
-interface MissionData {
-  title: string;
-  content: any[];
-}
+import { History, Users, GraduationCap, TrendingUp } from 'lucide-react';
 
 export function About() {
-  const [missionData, setMissionData] = useState<MissionData | null>(null)
-
-  useEffect(() => {
-    const query = `*[_type == "mission"][0] {
-      title,
-      content
-    }`
-
-    client.fetch(query).then((data) => {
-      setMissionData(data)
-    })
-  }, [])
-
-  if (!missionData) return null
   return (
-    <section id="about" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-secondary-900 mb-4 tracking-tight animate-slide-up">
-            {missionData.title}
+    <section id="about" className="border-b border-stone-200 bg-white">
+      <div className="max-w-6xl mx-auto py-10 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-10 lg:gap-14 items-start">
+        <div className="space-y-3">
+          <p className="text-xs font-semibold tracking-tight text-accent-600 uppercase">About Inkuthazo</p>
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900">
+            Our story, reimagined.
           </h2>
-          <div className="mt-6 w-24 h-1 bg-primary-500 mx-auto rounded-full animate-scale-in"></div>
-        </div>
-
-        {/* Mission Content */}
-        <div className="mb-20">
-          <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-soft p-8 md:p-12 animate-fade-in">
-            <div className="prose prose-lg max-w-none text-secondary-600 leading-relaxed">
-              <PortableText value={missionData.content} />
-            </div>
+          <div className="max-w-none text-stone-600 leading-relaxed space-y-4">
+            <p>
+              Inkuthazo began in 2023 as a burial society, built by neighbours who wanted to make sure
+              no family faced life's hardest moments alone. That spirit of solidarity never left us —
+              but our members told us they wanted more from their community.
+            </p>
+            <p>
+              Today, Inkuthazo is a social club. We still have each other's backs, but we've expanded
+              into the good times too: celebrations, gatherings, personal development, and building
+              financial security together. It's the same trusted community, now with a lot more to offer.
+            </p>
           </div>
         </div>
 
-        <div className="mt-20 grid grid-cols-1 gap-8 md:grid-cols-3">
-          <div className="group text-center p-8 bg-white rounded-2xl shadow-soft hover:shadow-medium transition-all duration-300 transform hover:-translate-y-1 animate-slide-up" style={{animationDelay: '0.1s'}}>
-            <div className="flex justify-center mb-6">
-              <div className="w-16 h-16 bg-primary-100 group-hover:bg-primary-500 rounded-2xl flex items-center justify-center transition-all duration-300">
-                <History className="h-8 w-8 text-primary-600 group-hover:text-white transition-colors duration-300" />
-              </div>
+        <div className="lg:col-span-2 grid sm:grid-cols-2 gap-6">
+          <div className="space-y-2">
+            <div className="h-9 w-9 rounded-full bg-primary-100 flex items-center justify-center mb-3">
+              <History className="h-5 w-5 text-primary-600" />
             </div>
-            <h3 className="text-xl font-bold text-secondary-900 mb-3">Rich Heritage</h3>
-            <p className="text-secondary-600 leading-relaxed">Building on generations of community support traditions</p>
+            <h3 className="text-sm font-semibold tracking-tight text-stone-900">Rich Heritage</h3>
+            <p className="text-base text-stone-600">
+              Years of trust, built on established values and a proven track record of showing up for our members.
+            </p>
           </div>
-
-          <div className="group text-center p-8 bg-white rounded-2xl shadow-soft hover:shadow-medium transition-all duration-300 transform hover:-translate-y-1 animate-slide-up" style={{animationDelay: '0.2s'}}>
-            <div className="flex justify-center mb-6">
-              <div className="w-16 h-16 bg-primary-100 group-hover:bg-primary-500 rounded-2xl flex items-center justify-center transition-all duration-300">
-                <Users className="h-8 w-8 text-primary-600 group-hover:text-white transition-colors duration-300" />
-              </div>
+          <div className="space-y-2">
+            <div className="h-9 w-9 rounded-full bg-accent-100 flex items-center justify-center mb-3">
+              <Users className="h-5 w-5 text-accent-600" />
             </div>
-            <h3 className="text-xl font-bold text-secondary-900 mb-3">Community Focused</h3>
-            <p className="text-secondary-600 leading-relaxed">Supporting families when they need it most</p>
+            <h3 className="text-sm font-semibold tracking-tight text-stone-900">Community &amp; Belonging</h3>
+            <p className="text-base text-stone-600">
+              A network of members who genuinely look out for one another, at events and in everyday life.
+            </p>
           </div>
-
-          <div className="group text-center p-8 bg-white rounded-2xl shadow-soft hover:shadow-medium transition-all duration-300 transform hover:-translate-y-1 animate-slide-up" style={{animationDelay: '0.3s'}}>
-            <div className="flex justify-center mb-6">
-              <div className="w-16 h-16 bg-primary-100 group-hover:bg-primary-500 rounded-2xl flex items-center justify-center transition-all duration-300">
-                <Heart className="h-8 w-8 text-primary-600 group-hover:text-white transition-colors duration-300" />
-              </div>
+          <div className="space-y-2">
+            <div className="h-9 w-9 rounded-full bg-primary-100 flex items-center justify-center mb-3">
+              <GraduationCap className="h-5 w-5 text-primary-600" />
             </div>
-            <h3 className="text-xl font-bold text-secondary-900 mb-3">Compassionate Care</h3>
-            <p className="text-secondary-600 leading-relaxed">Providing both material and emotional support</p>
+            <h3 className="text-sm font-semibold tracking-tight text-stone-900">Personal Development</h3>
+            <p className="text-base text-stone-600">
+              Workshops, mentorship, and resources that help members grow beyond the club itself.
+            </p>
+          </div>
+          <div className="space-y-2">
+            <div className="h-9 w-9 rounded-full bg-accent-100 flex items-center justify-center mb-3">
+              <TrendingUp className="h-5 w-5 text-accent-600" />
+            </div>
+            <h3 className="text-sm font-semibold tracking-tight text-stone-900">Financial Growth</h3>
+            <p className="text-base text-stone-600">
+              Group savings and investment opportunities that help members build wealth together.
+            </p>
           </div>
         </div>
       </div>

@@ -1,132 +1,132 @@
-import { useEffect, useState } from 'react'
-import { client, urlFor } from '../lib/sanity'
-import { Shield, ArrowRight } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
+import { useState } from 'react';
+import groupPhoto from '../assets/update_group_photo.webp';
 
-const logo = require("../assets/inkuthazo.jpeg");
-
-interface HeroData {
-  title: string;
-  subtitle: string;
-  description: string;
-  backgroundImage: any;
-  ctaText: string;
-}
+const values = [
+  'Unity',
+  'Ubuntu',
+  'Dignity',
+  'Accountability',
+  'Fellowship',
+  'Equality',
+  'Respect',
+  'Empowerment',
+];
 
 export function Hero() {
-  const [heroData, setHeroData] = useState<HeroData | null>(null)
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  useEffect(() => {
-    const query = `*[_type == "hero"][0] {
-      title,
-      subtitle,
-      description,
-      backgroundImage,
-      ctaText
-    }`
-
-    client.fetch(query).then((data) => {
-      setHeroData(data)
-    })
-  }, [])
-
-  if (!heroData) {
-    return (
-      <div id="home" className="relative bg-secondary-900 pt-16 min-h-screen flex items-center justify-center">
-        <div className="animate-pulse text-white text-xl">Loading...</div>
-      </div>
-    );
-  }
-
   return (
-    <div id="home" className="relative bg-secondary-900 pt-16 min-h-screen flex items-center">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
-        <img
-          className={`w-full h-full object-cover transition-opacity duration-700 ${
-            imageLoaded ? 'opacity-40' : 'opacity-0'
-          }`}
-          src={urlFor(heroData.backgroundImage).url()}
-          alt="Community support"
-          onLoad={() => setImageLoaded(true)}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary-900/80 to-secondary-800/60"></div>
-      </div>
-
-      {/* Content */}
-      <div className="relative max-w-7xl mx-auto py-32 px-4 sm:px-6 lg:px-8 w-full">
-        <div className="text-center space-y-8 animate-fade-in">
-          {/* Logo */}
-          <div className="flex justify-center mb-8">
-            <div className="relative">
-              <img
-                src={logo}
-                alt="Inkuthazo Logo"
-                className="h-20 w-20 rounded-full border-4 border-primary-500 shadow-strong animate-scale-in"
-              />
-              <div className="absolute -inset-2 bg-primary-500/20 rounded-full animate-ping"></div>
+    <div id="home" className="relative bg-stone-50 pt-16 border-b border-stone-200">
+      <div className="max-w-6xl mx-auto py-14 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          {/* Left: copy */}
+          <div className="space-y-6 animate-fade-in">
+            <div className="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white text-stone-600 text-xs font-medium tracking-tight px-3 py-1.5">
+              <Sparkles className="h-3.5 w-3.5 text-accent-600" />
+              A social club built on community
             </div>
-          </div>
 
-          {/* Main Title */}
-          <div className="space-y-4">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight animate-slide-up">
-              {heroData.title}
+            {/* Main Title */}
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-900 leading-[1.1]">
+              We rise together,{' '}
+              <span className="text-accent-600">or not at all.</span>
             </h1>
 
-            {/* Subtitle */}
-            <p className="text-xl md:text-2xl text-primary-200 font-medium max-w-4xl mx-auto animate-slide-up" style={{animationDelay: '0.1s'}}>
-              {heroData.subtitle}
+            {/* Covenant statement */}
+            <p className="text-lg sm:text-xl text-stone-700 leading-relaxed border-l-2 border-accent-500 pl-4">
+              We are neighbours who chose one another — bound by intention, not by
+              proximity or circumstance.
             </p>
-          </div>
 
-          {/* Description */}
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed animate-slide-up" style={{animationDelay: '0.2s'}}>
-            {heroData.description}
-          </p>
+            {/* Description */}
+            <p className="text-base text-stone-600 max-w-xl">
+              From our roots supporting families through life's hardest moments, we've grown into a
+              vibrant social club — a united, financially resilient and socially responsible society.
+            </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 animate-slide-up" style={{animationDelay: '0.3s'}}>
-            <a
-              href="#join"
-              className="group inline-flex items-center px-8 py-4 bg-primary-500 hover:bg-primary-600 text-white font-semibold rounded-xl shadow-medium hover:shadow-strong transition-all duration-300 transform hover:-translate-y-1"
-            >
-              {heroData.ctaText}
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
-            </a>
-
-            <a
-              href="#about"
-              className="inline-flex items-center px-8 py-4 border-2 border-primary-500 text-primary-400 hover:bg-primary-500 hover:text-white font-semibold rounded-xl transition-all duration-300 transform hover:-translate-y-1"
-            >
-              Learn More
-            </a>
-          </div>
-
-          {/* Trust Indicators */}
-          <div className="pt-16 animate-slide-up" style={{animationDelay: '0.4s'}}>
-            <div className="flex items-center justify-center space-x-8 text-gray-400">
-              <div className="flex items-center space-x-2">
-                <Shield className="h-5 w-5 text-primary-500" />
-                <span className="text-sm font-medium">Trusted by Community</span>
+            {/* Values */}
+            <div className="space-y-2">
+              <p className="text-xs font-semibold tracking-tight text-stone-500 uppercase">Our values</p>
+              <div className="flex flex-wrap gap-2">
+                {values.map((value) => (
+                  <span
+                    key={value}
+                    className="inline-flex items-center rounded-full border border-stone-200 bg-white px-3 py-1 text-xs font-medium text-stone-700"
+                  >
+                    {value}
+                  </span>
+                ))}
               </div>
-              <div className="hidden sm:block w-px h-6 bg-gray-600"></div>
-              <div className="flex items-center space-x-2">
-                <span className="text-sm font-medium">Established Heritage</span>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <a
+                href="#join"
+                className="inline-flex items-center justify-center rounded-full bg-stone-900 text-white text-sm font-semibold tracking-tight py-3 px-6 hover:bg-stone-800 transition-colors"
+              >
+                Become a Member
+              </a>
+              <a
+                href="#pillars"
+                className="inline-flex items-center justify-center rounded-full border border-stone-300 bg-white text-stone-700 text-sm font-medium tracking-tight py-3 px-6 hover:border-stone-400 hover:bg-stone-50 transition-colors"
+              >
+                See what we offer
+              </a>
+            </div>
+
+            {/* Statistics */}
+            <div className="grid grid-cols-3 gap-4 max-w-md pt-8 border-t border-stone-200">
+              <div>
+                <p className="text-xl sm:text-2xl font-bold tracking-tight text-stone-900">2023</p>
+                <p className="text-xs text-stone-500">Founded</p>
               </div>
-              <div className="hidden sm:block w-px h-6 bg-gray-600"></div>
-              <div className="flex items-center space-x-2">
-                <span className="text-sm font-medium">Dignified Support</span>
+              <div>
+                <p className="text-xl sm:text-2xl font-bold tracking-tight text-stone-900">20+</p>
+                <p className="text-xs text-stone-500">Active members</p>
+              </div>
+              <div>
+                <p className="text-xl sm:text-2xl font-bold tracking-tight text-stone-900">3+</p>
+                <p className="text-xs text-stone-500">Years of community</p>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary-500 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary-500 rounded-full mt-2 animate-pulse"></div>
+          {/* Right: photograph */}
+          <div className="relative">
+            <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-stone-200 bg-stone-100">
+              <img
+                className={`w-full h-full object-cover object-center transition-opacity duration-700 ${
+                  imageLoaded ? 'opacity-100' : 'opacity-0'
+                }`}
+                src={groupPhoto}
+                alt="Inkuthazo Social Club members gathered together"
+                width={1200}
+                height={900}
+                loading="eager"
+                fetchPriority="high"
+                onLoad={() => setImageLoaded(true)}
+              />
+            </div>
+            <div className="absolute left-4 right-4 bottom-4 rounded-xl border border-white/70 bg-white/95 p-4 shadow-lg backdrop-blur sm:left-6 sm:right-6 sm:bottom-6">
+              <p className="text-xs font-semibold uppercase tracking-tight text-accent-600">Your circle, beyond the moment</p>
+              <div className="mt-3 grid grid-cols-3 gap-3 text-xs text-stone-600">
+                <div>
+                  <p className="font-semibold text-stone-900">Connect</p>
+                  <p className="mt-1">Regular gatherings</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-stone-900">Grow</p>
+                  <p className="mt-1">Shared opportunities</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-stone-900">Support</p>
+                  <p className="mt-1">When it matters</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

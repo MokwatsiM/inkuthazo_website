@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Umbrella } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +9,10 @@ export function Navigation() {
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Benefits', href: '#benefits' },
+    { name: 'What We Offer', href: '#pillars' },
+    { name: 'FAQs', href: '#faq' },
+    { name: 'How It Works', href: '#how-it-works' },
+    { name: 'Gatherings', href: '#gatherings' },
     { name: 'Join Us', href: '#join' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -22,67 +26,83 @@ export function Navigation() {
   }, []);
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
+    <header className={`fixed w-full z-50 transition-all duration-300 ${
       scrolled
-        ? 'bg-secondary-900/95 backdrop-blur-sm shadow-medium'
-        : 'bg-secondary-900/90'
+        ? 'border-b border-stone-200 backdrop-blur bg-white/90 shadow-sm'
+        : 'border-b border-transparent backdrop-blur bg-white/70'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo Section */}
-          <div className="flex items-center space-x-3">
-            <div className="flex items-center justify-center w-10 h-10 bg-primary-500 rounded-lg animate-float">
-              <Umbrella className="h-6 w-6 text-white" />
-            </div>
-            <span className="text-xl font-bold text-white tracking-tight">
-              Inkuthazo
-            </span>
+      <div className="max-w-6xl mx-auto flex items-center justify-between gap-4 py-4 px-4 sm:px-6 lg:px-8">
+        {/* Logo Section */}
+        <a href="#home" className="flex items-center gap-2">
+          <img
+            src={logo}
+            alt="Inkuthazo Social Club logo"
+            className="h-9 w-9 rounded-xl object-cover shadow-sm"
+            width="36"
+            height="36"
+          />
+          <div className="flex flex-col leading-none">
+            <span className="text-base font-bold tracking-tight text-stone-900">Inkuthazo Social Club</span>
+            <span className="text-xs text-stone-500">Community • Connection • Celebration</span>
           </div>
+        </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="flex items-center space-x-1">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-secondary-800/50 transition-all duration-200 ease-in-out"
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-lg text-gray-400 hover:text-white hover:bg-secondary-800 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors duration-200"
-            >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Navigation */}
-      <div className={`md:hidden transition-all duration-300 ease-in-out ${
-        isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-      } overflow-hidden bg-secondary-900/95 backdrop-blur-sm`}>
-        <div className="px-4 pt-2 pb-6 space-y-2">
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-6 text-sm">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-secondary-800/50 transition-all duration-200"
-              onClick={() => setIsOpen(false)}
+              className="font-medium text-stone-600 hover:text-accent-600 transition-colors"
             >
               {item.name}
             </a>
           ))}
+        </nav>
+
+        {/* CTA Button */}
+        <div className="flex items-center gap-3">
+          <a
+            href="#join"
+            className="hidden sm:inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-xs sm:text-sm font-semibold tracking-tight text-white shadow-sm hover:shadow-md hover:from-primary-400 hover:to-accent-400 transition-all py-1.5 sm:py-2 px-3 sm:px-4"
+          >
+            Become a member
+          </a>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-accent-500 transition-colors duration-200"
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
       </div>
-    </nav>
+
+      {/* Mobile Navigation */}
+      {isOpen && (
+        <div className="md:hidden border-t border-stone-200 bg-white/95 backdrop-blur-sm">
+          <div className="px-4 pt-2 pb-6 space-y-1">
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="block px-4 py-3 rounded-lg text-base font-medium text-stone-600 hover:text-stone-900 hover:bg-stone-100 transition-all duration-200"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.name}
+              </a>
+            ))}
+            <a
+              href="#join"
+              className="block mt-2 text-center px-4 py-3 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold"
+              onClick={() => setIsOpen(false)}
+            >
+              Become a member
+            </a>
+          </div>
+        </div>
+      )}
+    </header>
   );
 }

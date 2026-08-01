@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Inkuthazo Social Club</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-50 antialiased selection:bg-emerald-500/30 selection:text-emerald-100">
+  <div class="min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <header class="w-full border-b border-slate-800/70 backdrop-blur bg-slate-950/70">
+      <div class="max-w-6xl mx-auto flex items-center justify-between gap-4 py-4 px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-2">
+          <div class="h-8 w-8 rounded-lg bg-emerald-500/90 flex items-center justify-center">
+            <span class="text-xs font-semibold tracking-tight text-slate-950">IN</span>
+          </div>
+          <div class="flex flex-col leading-none">
+            <span class="text-base font-semibold tracking-tight">Inkuthazo Social Club</span>
+            <span class="text-xs text-slate-400">Community • Savings • Empowerment</span>
+          </div>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#about" class="text-slate-300 hover:text-emerald-400 transition-colors">About</a>
+          <a href="#how-it-works" class="text-slate-300 hover:text-emerald-400 transition-colors">How it works</a>
+          <a href="#benefits" class="text-slate-300 hover:text-emerald-400 transition-colors">Benefits</a>
+          <a href="#testimonials" class="text-slate-300 hover:text-emerald-400 transition-colors">Members</a>
+          <a href="#join" class="text-slate-300 hover:text-emerald-400 transition-colors">Join</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="#join" class="hidden sm:inline-flex items-center justify-center rounded-full border border-emerald-500/50 bg-emerald-500/10 text-xs sm:text-sm font-medium tracking-tight text-emerald-100 hover:bg-emerald-500/20 transition-colors py-1.5 sm:py-2 px-3 sm:px-4">
+            Become a member
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <main class="flex-1">
+      <section class="relative overflow-hidden border-b border-slate-800/70">
+        <div class="pointer-events-none absolute inset-0 opacity-60">
+          <div class="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-emerald-500/20 blur-3xl"></div>
+          <div class="absolute -bottom-40 -left-20 h-80 w-80 rounded-full bg-sky-500/10 blur-3xl"></div>
+        </div>
+
+        <div class="relative max-w-6xl mx-auto py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <!-- Hero text -->
+          <div class="space-y-6">
+            <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-slate-900/70 text-emerald-100 text-xs font-medium tracking-tight px-2.5 py-1">
+              <span class="inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+              Trusted community savings club
+            </div>
+
+            <div class="space-y-3">
+              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-50">
+                Save together. Grow together.  
+                <span class="text-emerald-400">Inkuthazo Social Club.</span>
+              </h1>
+              <p class="text-base sm:text-lg text-slate-300 max-w-xl">
+                Inkuthazo is a community-driven social club that helps members save money, support each other, and build a more secure financial future through disciplined contributions and shared growth.
+              </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <a href="#join" class="inline-flex items-center justify-center rounded-full bg-emerald-500 text-slate-950 text-sm font-semibold tracking-tight py-2.5 px-5 hover:bg-emerald-400 transition-colors">
+                Join the club
+              </a>
+              <a href="#how-it-works" class="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/80 text-slate-100 text-sm font-medium tracking-tight py-2.5 px-5 hover:border-emerald-500/70 hover:text-emerald-200 transition-colors">
+                Learn how it works
+              </a>
+            </div>
+
+            <div class="grid grid-cols-3 gap-4 max-w-md pt-4 border-t border-slate-800/80">
+              <div>
+                <p class="text-xl sm:text-2xl font-semibold tracking-tight text-emerald-300">2017</p>
+                <p class="text-xs text-slate-400">Founded</p>
+              </div>
+              <div>
+                <p class="text-xl sm:text-2xl font-semibold tracking-tight text-emerald-300">20+</p>
+                <p class="text-xs text-slate-400">Active members</p>
+              </div>
+              <div>
+                <p class="text-xl sm:text-2xl font-semibold tracking-tight text-emerald-300">R500k+</p>
+                <p class="text-xs text-slate-400">Saved together</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero card -->
+          <div class="lg:pl-6">
+            <div class="rounded-2xl border border-slate-800/80 bg-slate-900/70 shadow-xl backdrop-blur-sm overflow-hidden">
+              <div class="border-b border-slate-800/80 bg-gradient-to-r from-slate-900 via-emerald-900/40 to-slate-900 px-4 sm:px-5 py-3 flex items-center justify-between">
+                <div>
+                  <p class="text-xs text-slate-400 tracking-tight">Next Contribution Cycle</p>
+                  <p class="text-sm font-medium tracking-tight text-slate-50">February – July 2026</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+                  <span class="text-xs text-emerald-300">Open for applications</span>
+                </div>
+              </div>
+
+              <div class="p-4 sm:p-5 space-y-4">
+                <div class="grid grid-cols-2 gap-3 text-xs">
+                  <div class="rounded-xl border border-slate-800/90 bg-slate-900/80 p-3 space-y-1">
+                    <p class="text-slate-400">Monthly contribution</p>
+                    <p class="text-base font-semibold tracking-tight text-emerald-300">From R500</p>
+                  </div>
+                  <div class="rounded-xl border border-slate-800/90 bg-slate-900/80 p-3 space-y-1">
+                    <p class="text-slate-400">Payout rotation</p>
+                    <p class="text-base font-semibold tracking-tight text-emerald-300">Every month</p>
+                  </div>
+                  <div class="rounded-xl border border-slate-800/90 bg-slate-900/80 p-3 space-y-1 col-span-2">
+                    <p class="text-slate-400">Purpose</p>
+                    <p class="text-xs text-slate-200">
+                      Group savings for school fees, emergencies, investments and personal projects – guided by clear rules and transparent records.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="rounded-xl border border-slate-800/80 bg-slate-950/80 p-3 space-y-3">
+                  <div class="flex items-center justify-between gap-2">
+                    <p class="text-xs text-slate-300">Member snapshot</p>
+                    <p class="text-[0.7rem] text-slate-500">Live preview</p>
+                  </div>
+                  <div class="space-y-3">
+                    <div class="flex items-center justify-between text-xs">
+                      <div class="flex items-center gap-2">
+                        <div class="h-7 w-7 rounded-full bg-gradient-to-br from-emerald-400 to-sky-400 flex items-center justify-center text-[0.6rem] font-semibold tracking-tight text-slate-950">
+                          ZM
+                        </div>
+                        <div>
+                          <p class="text-slate-100">Zanele M.</p>
+                          <p class="text-[0.65rem] text-slate-400">Member since 2020</p>
+                        </div>
+                      </div>
+                      <div class="text-right">
+                        <p class="text-[0.65rem] text-slate-400">Total saved</p>
+                        <p class="text-xs font-semibold tracking-tight text-emerald-300">R18 500</p>
+                      </div>
+                    </div>
+
+                    <div class="space-y-1.5">
+                      <div class="flex items-center justify-between text-[0.7rem] text-slate-300">
+                        <span>Cycle progress</span>
+                        <span>65%</span>
+                      </div>
+                      <div class="h-1.5 rounded-full bg-slate-800 overflow-hidden">
+                        <div class="h-full w-2/3 rounded-full bg-gradient-to-r from-emerald-400 to-sky-400"></div>
+                      </div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-2 text-[0.65rem]">
+                      <div class="rounded-lg border border-slate-800/90 bg-slate-900/90 p-2">
+                        <p class="text-slate-400">Missed</p>
+                        <p class="text-xs font-semibold tracking-tight text-emerald-300">0</p>
+                      </div>
+                      <div class="rounded-lg border border-slate-800/90 bg-slate-900/90 p-2">
+                        <p class="text-slate-400">On time</p>
+                        <p class="text-xs font-semibold tracking-tight text-emerald-300">9</p>
+                      </div>
+                      <div class="rounded-lg border border-slate-800/90 bg-slate-900/90 p-2">
+                        <p class="text-slate-400">Next payout</p>
+                        <p class="text-xs font-semibold tracking-tight text-sky-300">April 2026</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <a href="#join" class="inline-flex w-full items-center justify-center rounded-full bg-emerald-500 text-slate-950 text-sm font-semibold tracking-tight py-2.5 px-4 hover:bg-emerald-400 transition-colors">
+                  Apply to join this cycle
+                </a>
+                <p class="text-[0.7rem] text-slate-500 text-center">
+                  No joining fee • Simple rules • Transparent group records
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="border-b border-slate-800/80 bg-slate-950">
+        <div class="max-w-6xl mx-auto py-10 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-10 lg:gap-14 items-start">
+          <div class="space-y-3">
+            <p class="text-xs font-semibold tracking-tight text-emerald-400 uppercase">About Inkuthazo</p>
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-50">
+              A social club designed for real-life goals.
+            </h2>
+            <p class="text-base text-slate-300">
+              Inkuthazo started as a small group of friends pooling money to support each other's goals. Today, it is a structured social club with clear rules, elected leaders and a growing record of helping members reach their financial milestones.
+            </p>
+          </div>
+
+          <div class="lg:col-span-2 grid sm:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <h3 class="text-sm font-semibold tracking-tight text-slate-100">Our purpose</h3>
+              <p class="text-base text-slate-300">
+                We exist to encourage disciplined saving, financial education and mutual support. Members contribute monthly into a shared fund which is paid out in turns, giving everyone a chance to tackle large expenses without taking on debt.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <h3 class="text-sm font-semibold tracking-tight text-slate-100">How we operate</h3>
+              <p class="text-base text-slate-300">
+                We follow a constitution, record contributions, and share reports with the group. Leadership is elected, decisions are made transparently, and all funds are managed through an agreed banking channel for safety and accountability.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section id="how-it-works" class="border-b border-slate-800/80 bg-slate-950/90">
+        <div class="max-w-6xl mx-auto py-10 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-10">
+            <div>
+              <p class="text-xs font-semibold tracking-tight text-emerald-400 uppercase">How it works</p>
+              <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-50 mt-2">
+                Simple, transparent contribution cycles.
+              </h2>
+            </div>
+            <p class="text-base text-slate-300 max-w-md">
+              Every member plays a part. Contributions, payout order and rules are all agreed upfront and shared with the group.
+            </p>
+          </div>
+
+          <div class="grid lg:grid-cols-4 gap-6">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5 space-y-3">
+              <div class="h-8 w-8 rounded-full bg-emerald-500/15 flex items-center justify-center">
+                <span class="iconify text-emerald-400" data-icon="lucide:users" data-width="18" data-height="18" style="stroke-width:1.5;"></span>
+              </div>
+              <p class="text-sm font-semibold tracking-tight text-slate-100">1. Build the circle</p>
+              <p class="text-sm text-slate-300">
+                A group of committed members agrees on contribution amounts, payout order and cycle length.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5 space-y-3">
+              <div class="h-8 w-8 rounded-full bg-emerald-500/15 flex items-center justify-center">
+                <span class="iconify text-emerald-400" data-icon="lucide:calendar-range" data-width="18" data-height="18" style="stroke-width:1.5;"></span>
+              </div>
+              <p class="text-sm font-semibold tracking-tight text-slate-100">2. Contribute monthly</p>
+              <p class="text-sm text-slate-300">
+                Members deposit their agreed amount every month into the club account before the deadline.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5 space-y-3">
+              <div class="h-8 w-8 rounded-full bg-emerald-500/15 flex items-center justify-center">
+                <span class="iconify text-emerald-400" data-icon="lucide:wallet" data-width="18" data-height="18" style="stroke-width:1.5;"></span>
+              </div>
+              <p class="text-sm font-semibold tracking-tight text-slate-100">3. Receive your payout</p>
+              <p class="text-sm text-slate-300">
+                Each month, one or more members receive the full pot according to the agreed rotation schedule.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5 space-y-3">
+              <div class="h-8 w-8 rounded-full bg-emerald-500/15 flex items-center justify-center">
+                <span class="iconify text-emerald-400" data-icon="lucide:shield-check" data-width="18" data-height="18" style="stroke-width:1.5;"></span>
+              </div>
+              <p class="text-sm font-semibold tracking-tight text-slate-100">4. Support & accountability</p>
+              <p class="text-sm text-slate-300">
+                Late payments, emergencies and changes are handled through clear rules and group decisions.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-8 rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-4 sm:p-5 flex flex-col sm:flex-row gap-4 sm:items-center justify-between">
+            <div class="space-y-1">
+              <p class="text-sm font-semibold tracking-tight text-emerald-200">Typical contribution plans</p>
+              <p class="text-sm text-emerald-100">
+                Most members choose between R500, R1000 or R1500 per month depending on their goals and budget.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <span class="inline-flex items-center rounded-full bg-slate-950/60 border border-emerald-500/40 text-xs text-emerald-100 px-3 py-1.5">
+                R500 • Starter plan
+              </span>
+              <span class="inline-flex items-center rounded-full bg-slate-950/60 border border-emerald-500/40 text-xs text-emerald-100 px-3 py-1.5">
+                R1000 • Growth plan
+              </span>
+              <span class="inline-flex items-center rounded-full bg-slate-950/60 border border-emerald-500/40 text-xs text-emerald-100 px-3 py-1.5">
+                R1500+ • Ambition plan
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Benefits -->
+      <section id="benefits" class="border-b border-slate-800/80 bg-slate-950">
+        <div class="max-w-6xl mx-auto py-10 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+            <div>
+              <p class="text-xs font-semibold tracking-tight text-emerald-400 uppercase">Why join</p>
+              <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-50 mt-2">
+                More than a savings scheme.
+              </h2>
+            </div>
+            <p class="text-base text-slate-300 max-w-md">
+              Inkuthazo is a space for encouragement, accountability and shared progress.
+            </p>
+          </div>
+
+          <div class="grid lg:grid-cols-3 gap-6">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5 space-y-2">
+              <p class="text-sm font-semibold tracking-tight text-slate-100">Financial discipline</p>
+              <p class="text-sm text-slate-300">
+                Regular contributions help you build a savings habit, even when life gets busy.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5 space-y-2">
+              <p class="text-sm font-semibold tracking-tight text-slate-100">Community support</p>
+              <p class="text-sm text-slate-300">
+                You are surrounded by people on the same journey, ready to share advice and encouragement.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5 space-y-2">
+              <p class="text-sm font-semibold tracking-tight text-slate-100">Goal-focused payouts</p>
+              <p class="text-sm text-slate-300">
+                When your turn comes, you can tackle big expenses at once instead of using high-interest credit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials / Members -->
+      <section id="testimonials" class="border-b border-slate-800/80 bg-slate-950/95">
+        <div class="max-w-6xl mx-auto py-10 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+            <div>
+              <p class="text-xs font-semibold tracking-tight text-emerald-400 uppercase">Member stories</p>
+              <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-50 mt-2">
+                Real impact in members’ lives.
+              </h2>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5 flex flex-col gap-3">
+              <div class="flex items-center gap-3">
+                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-emerald-400 to-sky-400 flex items-center justify-center text-xs font-semibold tracking-tight text-slate-950">
+                  LN
+                </div>
+                <div>
+                  <p class="text-sm font-semibold tracking-tight text-slate-100">Lindiwe N.</p>
+                  <p class="text-xs text-slate-400">Member since 2019</p>
+                </div>
+              </div>
+              <p class="text-sm text-slate-300">
+                “With my payout I was able to pay school fees for the full year at once and avoid taking a loan. The group keeps me committed.”
+              </p>
+            </div>
+
+            <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5 flex flex-col gap-3">
+              <div class="flex items-center gap-3">
+                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-emerald-400 to-sky-400 flex items-center justify-center text-xs font-semibold tracking-tight text-slate-950">
+                  TM
+                </div>
+                <div>
+                  <p class="text-sm font-semibold tracking-tight text-slate-100">Thabo M.</p>
+                  <p class="text-xs text-slate-400">Member since 2020</p>
+                </div>
+              </div>
+              <p class="text-sm text-slate-300">
+                “The transparency and structure gives me peace of mind. We know exactly how much has been saved and where it is going.”
+              </p>
+            </div>
+
+            <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5 flex flex-col gap-3">
+              <div class="flex items-center gap-3">
+                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-emerald-400 to-sky-400 flex items-center justify-center text-xs font-semibold tracking-tight text-slate-950">
+                  ZK
+                </div>
+                <div>
+                  <p class="text-sm font-semibold tracking-tight text-slate-100">Zukiswa K.</p>
+                  <p class="text-xs text-slate-400">Member since 2018</p>
+                </div>
+              </div>
+              <p class="text-sm text-slate-300">
+                “Being part of Inkuthazo has helped me stay focused on my financial goals and built friendships at the same time.”
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Join section -->
+      <section id="join" class="bg-slate-950">
+        <div class="max-w-6xl mx-auto py-10 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1.1fr,0.9fr] gap-10 lg:gap-14 items-start">
+          <div class="space-y-5">
+            <p class="text-xs font-semibold tracking-tight text-emerald-400 uppercase">Join Inkuthazo</p>
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-50">
+              Ready to be part of the next cycle?
+            </h2>
+            <p class="text-base text-slate-300">
+              Share a few details and we will contact you with the next steps, including our club rules, contribution options and meeting schedule.
+            </p>
+
+            <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 space-y-3">
+              <p class="text-sm font-semibold tracking-tight text-slate-100">What to expect after you apply</p>
+              <ul class="space-y-2 text-sm text-slate-300">
+                <li class="flex gap-2">
+                  <span class="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  A call or message from a committee member to answer your questions.
+                </li>
+                <li class="flex gap-2">
+                  <span class="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  A copy of our rules and contribution options.
+                </li>
+                <li class="flex gap-2">
+                  <span class="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  Invitation to attend a meeting or online session before joining.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Contact form -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-950/90 p-4 sm:p-5 space-y-4">
+            <h3 class="text-sm font-semibold tracking-tight text-slate-100">Enquiry form</h3>
+            <form class="space-y-4">
+              <div class="space-y-1.5">
+                <label class="text-xs font-medium tracking-tight text-slate-300">Full name</label>
+                <input type="text" placeholder="Your name" class="w-full rounded-xl border border-slate-800 bg-slate-950/80 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-emerald-500/80 focus:border-emerald-500/80 px-3 py-2">
+              </div>
+
+              <div class="space-y-1.5">
+                <label class="text-xs font-medium tracking-tight text-slate-300">Phone or WhatsApp</label>
+                <input type="text" placeholder="e.g. 071 234 5678" class="w-full rounded-xl border border-slate-800 bg-slate-950/80 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-emerald-500/80 focus:border-emerald-500/80 px-3 py-2">
+              </div>
+
+              <div class="space-y-1.5">
+                <label class="text-xs font-medium tracking-tight text-slate-300">Email (optional)</label>
+                <input type="email" placeholder="you@example.com" class="w-full rounded-xl border border-slate-800 bg-slate-950/80 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-emerald-500/80 focus:border-emerald-500/80 px-3 py-2">
+              </div>
+
+              <div class="space-y-1.5">
+                <label class="text-xs font-medium tracking-tight text-slate-300">Preferred monthly contribution</label>
+                <select class="w-full rounded-xl border border-slate-800 bg-slate-950/80 text-sm text-slate-100 focus:outline-none focus:ring-1 focus:ring-emerald-500/80 focus:border-emerald-500/80 px-3 py-2">
+                  <option class="bg-slate-950">Select an amount</option>
+                  <option class="bg-slate-950">R500 per month</option>
+                  <option class="bg-slate-950">R1000 per month</option>
+                  <option class="bg-slate-950">R1500 per month</option>
+                  <option class="bg-slate-950">Other / not sure yet</option>
+                </select>
+              </div>
+
+              <div class="space-y-1.5">
+                <label class="text-xs font-medium tracking-tight text-slate-300">What are you saving for?</label>
+                <textarea rows="3" placeholder="Tell us about your goals (e.g. school fees, building, business, emergencies)" class="w-full rounded-xl border border-slate-800 bg-slate-950/80 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-emerald-500/80 focus:border-emerald-500/80 px-3 py-2"></textarea>
+              </div>
+
+              <button type="submit" class="w-full inline-flex items-center justify-center rounded-full bg-emerald-500 text-slate-950 text-sm font-semibold tracking-tight py-2.5 px-4 hover:bg-emerald-400 transition-colors">
+                Send enquiry
+              </button>
+
+              <p class="text-[0.7rem] text-slate-500">
+                Your information will only be used to contact you about Inkuthazo Social Club. We will not share it without your permission.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 bg-slate-950">
+      <div class="max-w-6xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div class="flex items-center gap-2 text-xs text-slate-500">
+          <span class="font-semibold tracking-tight text-slate-300">Inkuthazo Social Club</span>
+          <span>•</span>
+          <span>Est. 2017</span>
+        </div>
+        <div class="flex flex-wrap items-center gap-4 text-[0.7rem] text-slate-500">
+          <span>Community-based savings & support group.</span>
+          <span class="hidden sm:inline">For enquiries: yourclubemail@example.com</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
