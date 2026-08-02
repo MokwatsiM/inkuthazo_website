@@ -12,6 +12,9 @@
 /build
 /dist
 
+# high-res design sources (kept locally, not versioned)
+src/assets/Gemini_Generated_Image_*.png
+
 # misc
 .DS_Store
 .env.local

@@ -3,23 +3,23 @@
   "name": "Inkuthazo Social Club",
   "icons": [
     {
-      "src": "inkuthazo-burial-no-bg.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "favicon-32.png",
+      "type": "image/png",
+      "sizes": "32x32"
     },
     {
-      "src": "inkuthazo-burial-no-bg.png",
+      "src": "logo-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "inkuthazo-burial-no-bg.png",
+      "src": "logo-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#7c3aed",
+  "theme_color": "#1c1917",
   "background_color": "#ffffff"
 }

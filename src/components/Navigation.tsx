@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo_mark.png';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,7 +37,7 @@ export function Navigation() {
           <img
             src={logo}
             alt="Inkuthazo Social Club logo"
-            className="h-9 w-9 rounded-xl object-cover shadow-sm"
+            className="h-9 w-9 shrink-0 object-contain"
             width="36"
             height="36"
           />

@@ -12,7 +12,9 @@
       "Bash(npx eslint *)",
       "Bash(sips -s format webp -s formatOptions 80 update_group_photo.jpeg --out update_group_photo.webp)",
       "Bash(ffmpeg -hide_banner -encoders)",
-      "Bash(brew list *)"
+      "Bash(brew list *)",
+      "Bash(node /Users/motebangmpmokwatsi/Desktop/development/inkuthazo_website/scratch_logo.mjs)",
+      "Bash(rm -f scratch_mark_*.png)"
     ],
     "deny": [],
     "ask": []
