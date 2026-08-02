@@ -62,6 +62,10 @@ export function JoinUs() {
                 <CheckCircle className="h-5 w-5 text-accent-600 flex-shrink-0" />
                 <span className="text-sm">Covers you and up to 3 dependants</span>
               </div>
+              <div className="flex items-center space-x-3 text-stone-700">
+                <CheckCircle className="h-5 w-5 text-accent-600 flex-shrink-0" />
+                <span className="text-sm">Funeral benefit starts after 6 months</span>
+              </div>
             </div>
 
             <a

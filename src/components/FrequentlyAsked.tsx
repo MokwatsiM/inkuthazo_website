@@ -17,7 +17,12 @@ const questions = [
   {
     question: 'What funeral benefit does membership provide?',
     answer:
-      'A R7 000 benefit is paid towards the member, and R5 000 towards each registered dependant, to help the family with funeral costs. A committee member will explain the current rules, waiting periods and what is needed to register a dependant.',
+      'A R7 000 benefit is paid towards the member, and R5 000 towards each registered dependant, to help the family with funeral costs.',
+  },
+  {
+    question: 'Is there a waiting period?',
+    answer:
+      'Yes. The funeral benefit becomes available 6 months after you join. Your monthly contribution is payable from the first month, so it is worth joining well before you expect to need the benefit.',
   },
   {
     question: 'What else does the club offer beyond the funeral benefit?',

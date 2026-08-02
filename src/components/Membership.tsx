@@ -1,4 +1,4 @@
-import { Banknote, HeartHandshake, Building2, Users } from 'lucide-react';
+import { Banknote, HeartHandshake, Building2, Users, CalendarClock } from 'lucide-react';
 
 const costs = [
   {
@@ -37,6 +37,12 @@ const benefits = [
     title: 'More than a payout',
     description:
       'Membership also brings gatherings, personal development, and a community that shows up in good times and hard ones.',
+  },
+  {
+    icon: CalendarClock,
+    title: '6-month waiting period',
+    description:
+      'The funeral benefit becomes available 6 months after you join. Contributions are payable from your first month.',
   },
 ];
 
@@ -103,9 +109,10 @@ export function Membership() {
         </div>
 
         <p className="mt-8 text-xs text-stone-500 max-w-3xl">
-          Benefit amounts and contributions are set by the club and may be reviewed by members at a
-          general meeting. Speak to a committee member for the current rules, waiting periods and
-          what is required to register a dependant.
+          The funeral benefit becomes available after a 6-month waiting period from the date you
+          join. Benefit amounts and contributions are set by the club and may be reviewed by members
+          at a general meeting. Speak to a committee member for the current rules and what is
+          required to register a dependant.
         </p>
       </div>
     </section>

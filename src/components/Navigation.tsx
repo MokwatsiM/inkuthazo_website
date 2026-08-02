@@ -6,15 +6,21 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  /** Kept short so the bar never wraps; the full set lives in the mobile menu. */
   const navItems = [
-    { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'What We Offer', href: '#pillars' },
-    { name: 'FAQs', href: '#faq' },
-    { name: 'How It Works', href: '#how-it-works' },
     { name: 'Membership', href: '#membership' },
     { name: 'Gatherings', href: '#gatherings' },
-    { name: 'Join Us', href: '#join' },
+    { name: 'FAQs', href: '#faq' },
+  ];
+
+  /** Mobile menu shows everything, where vertical space is not a constraint. */
+  const mobileNavItems = [
+    { name: 'Home', href: '#home' },
+    ...navItems.slice(0, 2),
+    { name: 'How It Works', href: '#how-it-works' },
+    ...navItems.slice(2),
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -34,7 +40,7 @@ export function Navigation() {
     }`}>
       <div className="max-w-6xl mx-auto flex items-center justify-between gap-4 py-4 px-4 sm:px-6 lg:px-8">
         {/* Logo Section */}
-        <a href="#home" className="flex items-center gap-2">
+        <a href="#home" className="flex items-center gap-2 min-w-0">
           <img
             src={logo}
             alt="Inkuthazo Social Club logo"
@@ -42,19 +48,23 @@ export function Navigation() {
             width="36"
             height="36"
           />
-          <div className="flex flex-col leading-none">
-            <span className="text-base font-bold tracking-tight text-stone-900">Inkuthazo Social Club</span>
-            <span className="text-xs text-stone-500">Community • Connection • Celebration</span>
+          <div className="flex flex-col leading-none min-w-0">
+            <span className="text-base font-bold tracking-tight text-stone-900 whitespace-nowrap">
+              Inkuthazo Social Club
+            </span>
+            <span className="hidden sm:block text-xs text-stone-500 whitespace-nowrap">
+              Community • Connection • Celebration
+            </span>
           </div>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6 text-sm">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-6 text-sm shrink-0">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="font-medium text-stone-600 hover:text-accent-600 transition-colors"
+              className="font-medium text-stone-600 hover:text-accent-600 transition-colors whitespace-nowrap"
             >
               {item.name}
             </a>
@@ -62,7 +72,7 @@ export function Navigation() {
         </nav>
 
         {/* CTA Button */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 shrink-0">
           <a
             href="#join"
             className="hidden sm:inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-xs sm:text-sm font-semibold tracking-tight text-white shadow-sm hover:shadow-md hover:from-primary-400 hover:to-accent-400 transition-all py-1.5 sm:py-2 px-3 sm:px-4"
@@ -76,7 +86,7 @@ export function Navigation() {
             aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
-            className="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-accent-500 transition-colors duration-200"
+            className="lg:hidden inline-flex items-center justify-center p-2 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-accent-500 transition-colors duration-200"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -85,9 +95,9 @@ export function Navigation() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div id="mobile-menu" className="md:hidden border-t border-stone-200 bg-white/95 backdrop-blur-sm">
+        <div id="mobile-menu" className="lg:hidden border-t border-stone-200 bg-white/95 backdrop-blur-sm">
           <div className="px-4 pt-2 pb-6 space-y-1">
-            {navItems.map((item) => (
+            {mobileNavItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
