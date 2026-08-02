@@ -10,6 +10,21 @@ const questions = [
       'Complete the application form or contact us on WhatsApp. A committee member will explain the current membership options, contribution expectations, and next steps before you commit.',
   },
   {
+    question: 'What does membership cost?',
+    answer:
+      'There is a once-off joining fee of R550, and a monthly contribution of R200. That monthly contribution covers you and up to 3 registered dependants.',
+  },
+  {
+    question: 'What funeral benefit does membership provide?',
+    answer:
+      'A R7 000 benefit is paid towards the member, and R5 000 towards each registered dependant, to help the family with funeral costs. A committee member will explain the current rules, waiting periods and what is needed to register a dependant.',
+  },
+  {
+    question: 'What else does the club offer beyond the funeral benefit?',
+    answer:
+      'The club holds movable and immovable assets and investments in the name of the organisation, owned collectively by its members. Membership also brings regular gatherings, personal development opportunities, and a support network year-round.',
+  },
+  {
     question: 'Where is Inkuthazo based?',
     answer:
       'Our office is in Ratanda, Heidelberg, Gauteng. Gathering locations can vary, so we share confirmed details with members ahead of each event.',
@@ -21,9 +36,27 @@ const questions = [
   },
 ];
 
+/** FAQPage structured data, generated from the same source as the rendered list. */
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: questions.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+
 export function FrequentlyAsked() {
   return (
     <section id="faq" className="border-b border-stone-200 bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="max-w-4xl mx-auto py-10 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <p className="text-xs font-semibold tracking-tight text-accent-600 uppercase">Before you join</p>

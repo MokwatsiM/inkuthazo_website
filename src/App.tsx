@@ -4,6 +4,7 @@ import { About } from "./components/About";
 import { Pillars } from "./components/Pillars";
 import { MemberExperience } from "./components/MemberExperience";
 import { HowItWorks } from "./components/HowItWorks";
+import { Membership } from "./components/Membership";
 import { Gatherings } from "./components/Gatherings";
 import { FrequentlyAsked } from "./components/FrequentlyAsked";
 import { JoinUs } from "./components/JoinUs";
@@ -28,6 +29,7 @@ function App() {
         <Pillars />
         <MemberExperience />
         <HowItWorks />
+        <Membership />
         <Gatherings />
         <FrequentlyAsked />
         <JoinUs />

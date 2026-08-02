@@ -6,12 +6,14 @@ export function Contact() {
       icon: Phone,
       title: 'Phone',
       content: '+27 (0) 734715116',
+      href: 'tel:+27734715116',
       description: 'Call us during business hours'
     },
     {
       icon: Mail,
       title: 'Email',
       content: 'inkuthazoburialclub@gmail.com',
+      href: 'mailto:inkuthazoburialclub@gmail.com',
       description: 'We respond within 24 hours'
     },
     {
@@ -56,9 +58,18 @@ export function Contact() {
                 </h3>
 
                 <div className="space-y-1">
-                  <p className="text-sm text-stone-700 font-medium whitespace-pre-line">
-                    {item.content}
-                  </p>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      className="block text-sm text-stone-700 font-medium whitespace-pre-line hover:text-accent-600 transition-colors"
+                    >
+                      {item.content}
+                    </a>
+                  ) : (
+                    <p className="text-sm text-stone-700 font-medium whitespace-pre-line">
+                      {item.content}
+                    </p>
+                  )}
                   <p className="text-xs text-stone-500">
                     {item.description}
                   </p>

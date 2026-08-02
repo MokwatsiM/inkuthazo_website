@@ -12,6 +12,7 @@ export function Navigation() {
     { name: 'What We Offer', href: '#pillars' },
     { name: 'FAQs', href: '#faq' },
     { name: 'How It Works', href: '#how-it-works' },
+    { name: 'Membership', href: '#membership' },
     { name: 'Gatherings', href: '#gatherings' },
     { name: 'Join Us', href: '#join' },
     { name: 'Contact', href: '#contact' },
@@ -72,6 +73,9 @@ export function Navigation() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
             className="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-accent-500 transition-colors duration-200"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -81,7 +85,7 @@ export function Navigation() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden border-t border-stone-200 bg-white/95 backdrop-blur-sm">
+        <div id="mobile-menu" className="md:hidden border-t border-stone-200 bg-white/95 backdrop-blur-sm">
           <div className="px-4 pt-2 pb-6 space-y-1">
             {navItems.map((item) => (
               <a

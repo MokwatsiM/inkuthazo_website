@@ -52,17 +52,24 @@ export function JoinUs() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-stone-700">
                 <CheckCircle className="h-5 w-5 text-accent-600 flex-shrink-0" />
-                <span className="text-sm">Free consultation included</span>
+                <span className="text-sm">R550 joining fee, once-off</span>
               </div>
               <div className="flex items-center space-x-3 text-stone-700">
                 <CheckCircle className="h-5 w-5 text-accent-600 flex-shrink-0" />
-                <span className="text-sm">No hidden fees or charges</span>
+                <span className="text-sm">R200 per month, no hidden charges</span>
               </div>
               <div className="flex items-center space-x-3 text-stone-700">
                 <CheckCircle className="h-5 w-5 text-accent-600 flex-shrink-0" />
-                <span className="text-sm">Flexible payment options</span>
+                <span className="text-sm">Covers you and up to 3 dependants</span>
               </div>
             </div>
+
+            <a
+              href="#membership"
+              className="inline-block text-xs font-semibold text-accent-700 hover:text-accent-800 underline underline-offset-2"
+            >
+              See full membership details
+            </a>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-3">
