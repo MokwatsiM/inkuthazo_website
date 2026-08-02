@@ -1,4 +1,4 @@
-import { Banknote, HeartHandshake, Building2, Users, CalendarClock } from 'lucide-react';
+import { Banknote, Building2, CalendarClock, HeartHandshake, Users } from 'lucide-react';
 
 const costs = [
   {

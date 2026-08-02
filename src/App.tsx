@@ -16,27 +16,26 @@ import { Analytics } from "@vercel/analytics/react"
 function App() {
   const isMaintenanceMode = import.meta.env.VITE_MAINTENANCE_MODE === "true";
 
-  return isMaintenanceMode ? (
+  return (
     <div className="min-h-screen">
-      <Maintenance />
+      {isMaintenanceMode ? (
+        <Maintenance />
+      ) : (
+        <Layout>
+          <Hero />
+          <About />
+          <Pillars />
+          <MemberExperience />
+          <HowItWorks />
+          <Membership />
+          <Gatherings />
+          <FrequentlyAsked />
+          <JoinUs />
+          <Contact />
+        </Layout>
+      )}
       <SpeedInsights />
-    </div>
-  ) : (
-    <div className="min-h-screen">
-      <Layout>
-        <Hero />
-        <About />
-        <Pillars />
-        <MemberExperience />
-        <HowItWorks />
-        <Membership />
-        <Gatherings />
-        <FrequentlyAsked />
-        <JoinUs />
-        <Contact />
-      </Layout>
-        <SpeedInsights />
-        <Analytics/>
+      <Analytics />
     </div>
   );
 }
