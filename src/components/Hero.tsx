@@ -28,9 +28,14 @@ export function Hero() {
             </div>
 
             {/* Main Title */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-900 leading-[1.1]">
-              We rise together,{' '}
-              <span className="text-accent-600">or not at all.</span>
+            <h1 className="space-y-2">
+              <span className="block text-sm font-semibold uppercase tracking-tight text-stone-500">
+                Inkuthazo Social Club
+              </span>
+              <span className="block text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-900 leading-[1.1]">
+                We rise together,{' '}
+                <span className="text-accent-600">or not at all.</span>
+              </span>
             </h1>
 
             {/* Covenant statement */}
