@@ -25,8 +25,9 @@ const pillars: Pillar[] = [
       "Our roots run deep — members can still count on each other in life's toughest moments.",
   },
   {
-    title: 'Flexible membership',
-    description: 'Affordable, accommodating contribution options that fit real life.',
+    title: 'One clear contribution',
+    description:
+      'R550 to join and R200 a month — the same for every member, covering you and up to 3 dependants.',
   },
   {
     title: 'Transparent management',
@@ -41,7 +42,7 @@ export function Pillars() {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
           <div>
-            <p className="text-xs font-semibold tracking-tight text-accent-600 uppercase">
+            <p className="text-xs font-semibold tracking-tight text-ochre-700 uppercase">
               What We Offer
             </p>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900 mt-2">
@@ -58,7 +59,7 @@ export function Pillars() {
           {pillars.map((pillar, index) => (
             <div key={pillar.title} className="space-y-3">
               <div className="flex items-baseline gap-3 border-t border-stone-200 pt-4">
-                <span className="text-sm font-bold tracking-tight text-accent-600 tabular-nums">
+                <span className="text-sm font-bold tracking-tight text-ochre-700 tabular-nums">
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <h3 className="text-base font-semibold tracking-tight text-stone-900">
@@ -70,23 +71,6 @@ export function Pillars() {
           ))}
         </div>
 
-        {/* Trust Indicators */}
-        <div className="mt-16 pt-12 border-t border-stone-200">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="space-y-2">
-              <div className="text-3xl font-bold text-stone-900">20+</div>
-              <div className="text-stone-500 font-medium">Active Members</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-3xl font-bold text-stone-900">3+</div>
-              <div className="text-stone-500 font-medium">Years of Community</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-3xl font-bold text-stone-900">100%</div>
-              <div className="text-stone-500 font-medium">Member Driven</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

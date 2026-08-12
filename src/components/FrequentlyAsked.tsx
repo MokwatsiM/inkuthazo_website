@@ -64,7 +64,7 @@ export function FrequentlyAsked() {
       />
       <div className="max-w-4xl mx-auto py-10 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <p className="text-xs font-semibold tracking-tight text-accent-600 uppercase">Before you join</p>
+          <p className="text-xs font-semibold tracking-tight text-ochre-700 uppercase">Before you join</p>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900 mt-2">
             Questions, answered plainly.
           </h2>
@@ -78,7 +78,7 @@ export function FrequentlyAsked() {
             <details key={item.question} className="group py-5">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-left text-sm font-semibold text-stone-900">
                 {item.question}
-                <span className="text-xl font-normal text-accent-600 transition-transform group-open:rotate-45" aria-hidden="true">
+                <span className="text-xl font-normal text-ochre-700 transition-transform group-open:rotate-45" aria-hidden="true">
                   +
                 </span>
               </summary>

@@ -64,7 +64,7 @@ export function Navigation() {
             <a
               key={item.name}
               href={item.href}
-              className="font-medium text-stone-600 hover:text-accent-600 transition-colors whitespace-nowrap"
+              className="font-medium text-stone-600 hover:text-ochre-700 transition-colors whitespace-nowrap"
             >
               {item.name}
             </a>
@@ -75,7 +75,7 @@ export function Navigation() {
         <div className="flex items-center gap-3 shrink-0">
           <a
             href="#join"
-            className="hidden sm:inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-xs sm:text-sm font-semibold tracking-tight text-white shadow-sm hover:shadow-md hover:from-primary-400 hover:to-accent-400 transition-all py-1.5 sm:py-2 px-3 sm:px-4"
+            className="hidden sm:inline-flex items-center justify-center rounded-full bg-brand-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-900 focus-visible:ring-offset-2 text-xs sm:text-sm font-semibold tracking-tight text-white shadow-sm hover:shadow-md transition-all py-3 px-4"
           >
             Become a member
           </a>
@@ -86,7 +86,7 @@ export function Navigation() {
             aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
-            className="lg:hidden inline-flex items-center justify-center p-2 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-accent-500 transition-colors duration-200"
+            className="lg:hidden inline-flex items-center justify-center p-3 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-brand-600 transition-colors duration-200"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -109,7 +109,7 @@ export function Navigation() {
             ))}
             <a
               href="#join"
-              className="block mt-2 text-center px-4 py-3 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold"
+              className="block mt-2 text-center px-4 py-3 rounded-full bg-brand-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-900 focus-visible:ring-offset-2 text-white font-semibold"
               onClick={() => setIsOpen(false)}
             >
               Become a member

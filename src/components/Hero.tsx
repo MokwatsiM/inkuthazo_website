@@ -22,8 +22,8 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           {/* Left: copy */}
           <div className="space-y-6 animate-fade-in">
-            <div className="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white text-stone-600 text-xs font-medium tracking-tight px-3 py-1.5">
-              <Sparkles className="h-3.5 w-3.5 text-accent-600" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-stone-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2 bg-white text-stone-600 text-xs font-medium tracking-tight px-3 py-1.5">
+              <Sparkles className="h-3.5 w-3.5 text-ochre-700" />
               A social club built on community
             </div>
 
@@ -34,12 +34,12 @@ export function Hero() {
               </span>
               <span className="block text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-900 leading-[1.1]">
                 We rise together,{' '}
-                <span className="text-accent-600">or not at all.</span>
+                <span className="text-ochre-700">or not at all.</span>
               </span>
             </h1>
 
             {/* Covenant statement */}
-            <p className="text-lg sm:text-xl text-stone-700 leading-relaxed border-l-2 border-accent-500 pl-4">
+            <p className="text-lg sm:text-xl text-stone-700 leading-relaxed border-l-2 border-ochre-500 pl-4">
               We are neighbours who chose one another — bound by intention, not by
               proximity or circumstance.
             </p>
@@ -69,13 +69,13 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
                 href="#join"
-                className="inline-flex items-center justify-center rounded-full bg-stone-900 text-white text-sm font-semibold tracking-tight py-3 px-6 hover:bg-stone-800 transition-colors"
+                className="inline-flex items-center justify-center rounded-full bg-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 focus-visible:ring-offset-2 text-white text-sm font-semibold tracking-tight py-3 px-6 hover:bg-stone-800 transition-colors"
               >
                 Become a Member
               </a>
               <a
                 href="#pillars"
-                className="inline-flex items-center justify-center rounded-full border border-stone-300 bg-white text-stone-700 text-sm font-medium tracking-tight py-3 px-6 hover:border-stone-400 hover:bg-stone-50 transition-colors"
+                className="inline-flex items-center justify-center rounded-full border border-stone-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2 bg-white text-stone-700 text-sm font-medium tracking-tight py-3 px-6 hover:border-stone-400 hover:bg-stone-50 transition-colors"
               >
                 See what we offer
               </a>
@@ -85,15 +85,15 @@ export function Hero() {
             <div className="grid grid-cols-3 gap-4 max-w-md pt-8 border-t border-stone-200">
               <div>
                 <p className="text-xl sm:text-2xl font-bold tracking-tight text-stone-900">2023</p>
-                <p className="text-xs text-stone-500">Founded</p>
+                <p className="text-xs text-stone-500">Serving Ratanda since</p>
               </div>
               <div>
-                <p className="text-xl sm:text-2xl font-bold tracking-tight text-stone-900">20+</p>
-                <p className="text-xs text-stone-500">Active members</p>
+                <p className="text-xl sm:text-2xl font-bold tracking-tight text-stone-900">R200</p>
+                <p className="text-xs text-stone-500">A month, all in</p>
               </div>
               <div>
-                <p className="text-xl sm:text-2xl font-bold tracking-tight text-stone-900">3+</p>
-                <p className="text-xs text-stone-500">Years of community</p>
+                <p className="text-xl sm:text-2xl font-bold tracking-tight text-stone-900">R7 000</p>
+                <p className="text-xs text-stone-500">Funeral benefit</p>
               </div>
             </div>
           </div>
@@ -115,7 +115,7 @@ export function Hero() {
               />
             </div>
             <div className="absolute left-4 right-4 bottom-4 rounded-xl border border-white/70 bg-white/95 p-4 shadow-lg backdrop-blur sm:left-6 sm:right-6 sm:bottom-6">
-              <p className="text-xs font-semibold uppercase tracking-tight text-accent-600">Your circle, beyond the moment</p>
+              <p className="text-xs font-semibold uppercase tracking-tight text-ochre-700">Your circle, beyond the moment</p>
               <div className="mt-3 grid grid-cols-3 gap-3 text-xs text-stone-600">
                 <div>
                   <p className="font-semibold text-stone-900">Connect</p>

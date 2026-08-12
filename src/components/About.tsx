@@ -5,7 +5,7 @@ export function About() {
     <section id="about" className="border-b border-stone-200 bg-white">
       <div className="max-w-6xl mx-auto py-10 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-10 lg:gap-14 items-start">
         <div className="space-y-3">
-          <p className="text-xs font-semibold tracking-tight text-accent-600 uppercase">About Inkuthazo</p>
+          <p className="text-xs font-semibold tracking-tight text-ochre-700 uppercase">About Inkuthazo</p>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900">
             Our story, reimagined.
           </h2>
@@ -25,8 +25,8 @@ export function About() {
 
         <div className="lg:col-span-2 grid sm:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <div className="h-9 w-9 rounded-full bg-primary-100 flex items-center justify-center mb-3">
-              <History className="h-5 w-5 text-primary-600" />
+            <div className="h-9 w-9 rounded-full bg-brand-100 flex items-center justify-center mb-3">
+              <History className="h-5 w-5 text-brand-700" />
             </div>
             <h3 className="text-sm font-semibold tracking-tight text-stone-900">Rich Heritage</h3>
             <p className="text-base text-stone-600">
@@ -34,8 +34,8 @@ export function About() {
             </p>
           </div>
           <div className="space-y-2">
-            <div className="h-9 w-9 rounded-full bg-accent-100 flex items-center justify-center mb-3">
-              <Users className="h-5 w-5 text-accent-600" />
+            <div className="h-9 w-9 rounded-full bg-brand-100 flex items-center justify-center mb-3">
+              <Users className="h-5 w-5 text-ochre-700" />
             </div>
             <h3 className="text-sm font-semibold tracking-tight text-stone-900">Community &amp; Belonging</h3>
             <p className="text-base text-stone-600">
@@ -43,8 +43,8 @@ export function About() {
             </p>
           </div>
           <div className="space-y-2">
-            <div className="h-9 w-9 rounded-full bg-primary-100 flex items-center justify-center mb-3">
-              <GraduationCap className="h-5 w-5 text-primary-600" />
+            <div className="h-9 w-9 rounded-full bg-brand-100 flex items-center justify-center mb-3">
+              <GraduationCap className="h-5 w-5 text-brand-700" />
             </div>
             <h3 className="text-sm font-semibold tracking-tight text-stone-900">Personal Development</h3>
             <p className="text-base text-stone-600">
@@ -52,8 +52,8 @@ export function About() {
             </p>
           </div>
           <div className="space-y-2">
-            <div className="h-9 w-9 rounded-full bg-accent-100 flex items-center justify-center mb-3">
-              <TrendingUp className="h-5 w-5 text-accent-600" />
+            <div className="h-9 w-9 rounded-full bg-brand-100 flex items-center justify-center mb-3">
+              <TrendingUp className="h-5 w-5 text-ochre-700" />
             </div>
             <h3 className="text-sm font-semibold tracking-tight text-stone-900">Financial Growth</h3>
             <p className="text-base text-stone-600">

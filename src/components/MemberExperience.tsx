@@ -27,7 +27,7 @@ export function MemberExperience() {
       <div className="max-w-6xl mx-auto py-10 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-[0.9fr,1.1fr] gap-10 lg:gap-16 items-start">
           <div className="space-y-4">
-            <p className="text-xs font-semibold tracking-tight text-accent-600 uppercase">
+            <p className="text-xs font-semibold tracking-tight text-ochre-700 uppercase">
               The member experience
             </p>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900">
@@ -44,8 +44,8 @@ export function MemberExperience() {
               const Icon = promise.icon;
               return (
                 <div key={promise.title} className="rounded-2xl border border-stone-200 bg-white p-5 space-y-4">
-                  <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center">
-                    <Icon className="h-5 w-5 text-accent-600" />
+                  <div className="h-10 w-10 rounded-xl bg-brand-100 flex items-center justify-center">
+                    <Icon className="h-5 w-5 text-ochre-700" />
                   </div>
                   <div className="space-y-2">
                     <h3 className="text-sm font-semibold tracking-tight text-stone-900">{promise.title}</h3>

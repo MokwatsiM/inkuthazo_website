@@ -10,16 +10,22 @@ import { FrequentlyAsked } from "./components/FrequentlyAsked";
 import { JoinUs } from "./components/JoinUs";
 import { Contact } from "./components/Contact";
 import { Maintenance } from "./components/Maintanance";
+import { PrivacyPolicy } from "./components/PrivacyPolicy";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   const isMaintenanceMode = import.meta.env.VITE_MAINTENANCE_MODE === "true";
+  // Single extra route; not worth a router dependency for one static page.
+  const isPrivacy =
+    typeof window !== "undefined" && window.location.pathname.replace(/\/$/, "") === "/privacy";
 
   return (
     <div className="min-h-screen">
       {isMaintenanceMode ? (
         <Maintenance />
+      ) : isPrivacy ? (
+        <PrivacyPolicy />
       ) : (
         <Layout>
           <Hero />

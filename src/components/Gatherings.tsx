@@ -20,12 +20,11 @@ const gatherings: Gathering[] = [
     audience: 'All members',
   },
   {
-    date: 'TBC',
-    time: 'TBC',
-    title: 'Inkuthazo Social Club Annual Year end celebration',
+    date: 'Date set at the November meeting',
+    time: 'Confirmed to members',
+    title: 'Annual year-end celebration',
     audience: 'Members and family',
   },
-  
 ];
 
 export function Gatherings() {
@@ -37,7 +36,7 @@ export function Gatherings() {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
           <div>
-            <p className="text-xs font-semibold tracking-tight text-accent-600 uppercase">
+            <p className="text-xs font-semibold tracking-tight text-ochre-700 uppercase">
               What's Coming Up
             </p>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900 mt-2">

@@ -38,12 +38,6 @@ const benefits = [
     description:
       'Membership also brings gatherings, personal development, and a community that shows up in good times and hard ones.',
   },
-  {
-    icon: CalendarClock,
-    title: '6-month waiting period',
-    description:
-      'The funeral benefit becomes available 6 months after you join. Contributions are payable from your first month.',
-  },
 ];
 
 export function Membership() {
@@ -53,7 +47,7 @@ export function Membership() {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
           <div>
-            <p className="text-xs font-semibold tracking-tight text-accent-600 uppercase">
+            <p className="text-xs font-semibold tracking-tight text-ochre-700 uppercase">
               Membership
             </p>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900 mt-2">
@@ -61,8 +55,8 @@ export function Membership() {
             </h2>
           </div>
           <p className="text-base text-stone-600 max-w-md">
-            No hidden fees. Everything below is explained again by a committee member before you
-            commit.
+            R2 400 a year, towards up to R22 000 of funeral benefit for a household of four.
+            Everything below is explained again by a committee member before you commit.
           </p>
         </div>
 
@@ -79,10 +73,29 @@ export function Membership() {
               </div>
             ))}
 
+            {/*
+              The waiting period decides whether joining is the right move, so it
+              sits with the money and above the commitment — not in the benefits
+              grid, where it read as a feature.
+            */}
+            <div className="rounded-xl border border-caution-200 bg-caution-50 p-4 space-y-2">
+              <div className="flex items-center gap-2">
+                <CalendarClock className="h-4 w-4 shrink-0 text-caution-700" />
+                <p className="text-sm font-semibold text-caution-700">
+                  Your funeral benefit starts after 6 months
+                </p>
+              </div>
+              <p className="text-sm text-stone-700">
+                This protects the members already contributing, so no one joins only when a benefit
+                is needed. It also means Inkuthazo cannot help with a funeral in your first six
+                months — please join before you need us.
+              </p>
+            </div>
+
             <div className="pt-2 border-t border-stone-200">
               <a
                 href="#join"
-                className="inline-flex w-full items-center justify-center rounded-full bg-stone-900 text-white text-sm font-semibold tracking-tight py-2.5 px-5 hover:bg-stone-800 transition-colors"
+                className="inline-flex w-full items-center justify-center rounded-full bg-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 focus-visible:ring-offset-2 text-white text-sm font-semibold tracking-tight py-3 px-5 hover:bg-stone-800 transition-colors"
               >
                 Apply for membership
               </a>
@@ -96,7 +109,7 @@ export function Membership() {
               return (
                 <div key={benefit.title} className="space-y-2">
                   <div className="h-9 w-9 rounded-full bg-white border border-stone-200 flex items-center justify-center mb-3">
-                    <Icon className="h-4 w-4 text-accent-600" />
+                    <Icon className="h-4 w-4 text-ochre-700" />
                   </div>
                   <h3 className="text-sm font-semibold tracking-tight text-stone-900">
                     {benefit.title}

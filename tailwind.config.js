@@ -4,73 +4,61 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: '#fffbeb',
-          100: '#fef3c7',
-          200: '#fde68a',
-          300: '#fcd34d',
-          400: '#fbbf24',
-          500: '#f59e0b',
-          600: '#d97706',
-          700: '#b45309',
-          800: '#92400e',
-          900: '#78350f',
+        /**
+         * Brand navy, sampled from the club emblem in logo_mark.png (#204060).
+         * brand-800 is the logo ink itself: buttons and mark share one colour.
+         * All steps 600+ clear WCAG AA against white and stone-50.
+         */
+        brand: {
+          50: '#f2f6fa',
+          100: '#e3edf5',
+          200: '#c3d8e9',
+          300: '#94b9d5',
+          400: '#5d92b8',
+          500: '#3a719c',
+          600: '#2b5a82',
+          700: '#244969',
+          800: '#1e4462',
+          900: '#16324a',
         },
-        accent: {
-          50: '#fff1f2',
-          100: '#ffe4e6',
-          200: '#fecdd3',
-          300: '#fda4af',
-          400: '#fb7185',
-          500: '#f43f5e',
-          600: '#e11d48',
-          700: '#be123c',
-          800: '#9f1239',
-          900: '#881337',
+        /**
+         * Warm ochre for eyebrow labels, numerals and icon accents.
+         * Replaces the former crimson `accent`, which read as an error colour
+         * and sat at 4.50:1 on stone-50 — marginally under AA.
+         */
+        ochre: {
+          50: '#fdf8ef',
+          100: '#f8ecd5',
+          200: '#efd5a6',
+          300: '#e0b76d',
+          400: '#c9933c',
+          500: '#a87420',
+          600: '#8a5a10',
+          700: '#6f480c',
+          800: '#5a3a0b',
+          900: '#4a300a',
         },
-        secondary: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
-          950: '#020617',
-        }
+        /**
+         * Reserved exclusively for genuine caution (the waiting-period notice).
+         * Nothing decorative may use this scale.
+         */
+        caution: {
+          50: '#fef6f6',
+          100: '#fde8e8',
+          200: '#f9cccc',
+          600: '#a32b2b',
+          700: '#8a2323',
+        },
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
-        'slide-up': 'slideUp 0.5s ease-out',
-        'scale-in': 'scaleIn 0.3s ease-out',
-        'float': 'float 6s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
-        slideUp: {
-          '0%': { transform: 'translateY(20px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
-        },
-        scaleIn: {
-          '0%': { transform: 'scale(0.95)', opacity: '0' },
-          '100%': { transform: 'scale(1)', opacity: '1' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
-        }
       },
-      boxShadow: {
-        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
-        'medium': '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-        'strong': '0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 4px 20px -2px rgba(0, 0, 0, 0.1)',
-      }
     },
   },
   plugins: [],

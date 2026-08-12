@@ -15,9 +15,9 @@ const steps: Step[] = [
       'Come along to a gathering as our guest. Meet members, ask questions, and see how the club works before committing to anything.',
   },
   {
-    title: 'Choose your contribution',
+    title: 'Confirm the contribution',
     description:
-      'Agree on a monthly contribution that fits your circumstances. Our options are designed to be affordable and flexible.',
+      'Membership is a once-off R550 joining fee and R200 a month, which covers you and up to 3 registered dependants. A committee member confirms the payment arrangement with you.',
   },
   {
     title: 'Join the family',
@@ -33,7 +33,7 @@ export function HowItWorks() {
         <div className="grid lg:grid-cols-3 gap-10 lg:gap-14 items-start">
           {/* Section Header */}
           <div className="space-y-3">
-            <p className="text-xs font-semibold tracking-tight text-accent-600 uppercase">
+            <p className="text-xs font-semibold tracking-tight text-ochre-700 uppercase">
               Getting Started
             </p>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900">
@@ -48,7 +48,7 @@ export function HowItWorks() {
           <ol className="lg:col-span-2 divide-y divide-stone-200 border-t border-stone-200">
             {steps.map((step, index) => (
               <li key={step.title} className="flex gap-5 py-5">
-                <span className="text-sm font-bold tracking-tight text-accent-600 tabular-nums pt-0.5">
+                <span className="text-sm font-bold tracking-tight text-ochre-700 tabular-nums pt-0.5">
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <div className="space-y-1.5">
