@@ -1,9 +1,11 @@
+import { useMembershipTerms } from '../lib/useMembershipTerms';
+
 interface Pillar {
   title: string;
   description: string;
 }
 
-const pillars: Pillar[] = [
+const buildPillars = (joiningFee: string, monthly: string, dependants: number): Pillar[] => [
   {
     title: 'Vibrant social events',
     description:
@@ -26,8 +28,7 @@ const pillars: Pillar[] = [
   },
   {
     title: 'One clear contribution',
-    description:
-      'R550 to join and R200 a month — the same for every member, covering you and up to 3 dependants.',
+    description: `${joiningFee} to join and ${monthly} a month — the same for every member, covering you and up to ${dependants} dependants.`,
   },
   {
     title: 'Transparent management',
@@ -36,6 +37,13 @@ const pillars: Pillar[] = [
 ];
 
 export function Pillars() {
+  const terms = useMembershipTerms();
+  const pillars = buildPillars(
+    terms.joiningFee,
+    terms.monthlyContribution,
+    terms.dependantLimit,
+  );
+
   return (
     <section id="pillars" className="border-b border-stone-200 bg-white">
       <div className="max-w-6xl mx-auto py-10 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8">

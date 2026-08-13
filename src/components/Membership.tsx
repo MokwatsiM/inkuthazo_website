@@ -1,46 +1,33 @@
 import { Banknote, Building2, CalendarClock, HeartHandshake, Users } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+import { fallbackTerms, useMembershipTerms } from '../lib/useMembershipTerms';
 
-const costs = [
-  {
-    label: 'Joining fee',
-    amount: 'R550',
-    note: 'Once-off, payable when your application is accepted.',
-  },
-  {
-    label: 'Monthly contribution',
-    amount: 'R200',
-    note: 'Covers you and up to 3 registered dependants.',
-  },
-];
-
-const benefits = [
-  {
-    icon: HeartHandshake,
-    title: 'Funeral benefit',
-    description:
-      'A R7 000 benefit is paid towards the member, and R5 000 towards each registered dependant, to help the family with funeral costs.',
-  },
-  {
-    icon: Users,
-    title: 'Cover for your household',
-    description:
-      'Register up to 3 dependants under your membership at no additional monthly contribution.',
-  },
-  {
-    icon: Building2,
-    title: 'A share in what we build',
-    description:
-      'The club holds movable and immovable assets and investments in the name of the organisation, owned collectively by its members.',
-  },
-  {
-    icon: Banknote,
-    title: 'More than a payout',
-    description:
-      'Membership also brings gatherings, personal development, and a community that shows up in good times and hard ones.',
-  },
-];
+/** Studio stores an icon name; the component is resolved here. */
+const iconByName: Record<string, LucideIcon> = {
+  HeartHandshake,
+  Users,
+  Building2,
+  Banknote,
+};
 
 export function Membership() {
+  const terms = useMembershipTerms();
+
+  const costs = [
+    {
+      label: 'Joining fee',
+      amount: terms.joiningFee,
+      note: terms.joiningFeeNote,
+    },
+    {
+      label: 'Monthly contribution',
+      amount: terms.monthlyContribution,
+      note: terms.monthlyContributionNote,
+    },
+  ];
+
+  const benefits = terms.benefits ?? fallbackTerms.benefits;
+
   return (
     <section id="membership" className="border-b border-stone-200 bg-stone-50">
       <div className="max-w-6xl mx-auto py-10 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8">
@@ -55,8 +42,8 @@ export function Membership() {
             </h2>
           </div>
           <p className="text-base text-stone-600 max-w-md">
-            R2 400 a year, towards up to R22 000 of funeral benefit for a household of four.
-            Everything below is explained again by a committee member before you commit.
+            {terms.valueSummary} Everything below is explained again by a committee member before
+            you commit.
           </p>
         </div>
 
@@ -82,14 +69,10 @@ export function Membership() {
               <div className="flex items-center gap-2">
                 <CalendarClock className="h-4 w-4 shrink-0 text-caution-700" />
                 <p className="text-sm font-semibold text-caution-700">
-                  Your funeral benefit starts after 6 months
+                  {terms.waitingPeriodHeading}
                 </p>
               </div>
-              <p className="text-sm text-stone-700">
-                This protects the members already contributing, so no one joins only when a benefit
-                is needed. It also means Inkuthazo cannot help with a funeral in your first six
-                months — please join before you need us.
-              </p>
+              <p className="text-sm text-stone-700">{terms.waitingPeriodBody}</p>
             </div>
 
             <div className="pt-2 border-t border-stone-200">
@@ -105,7 +88,7 @@ export function Membership() {
           {/* Benefits */}
           <div className="grid sm:grid-cols-2 gap-6">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
+              const Icon = iconByName[benefit.icon ?? ''] ?? HeartHandshake;
               return (
                 <div key={benefit.title} className="space-y-2">
                   <div className="h-9 w-9 rounded-full bg-white border border-stone-200 flex items-center justify-center mb-3">
@@ -121,12 +104,7 @@ export function Membership() {
           </div>
         </div>
 
-        <p className="mt-8 text-xs text-stone-500 max-w-3xl">
-          The funeral benefit becomes available after a 6-month waiting period from the date you
-          join. Benefit amounts and contributions are set by the club and may be reviewed by members
-          at a general meeting. Speak to a committee member for the current rules and what is
-          required to register a dependant.
-        </p>
+        <p className="mt-8 text-xs text-stone-500 max-w-3xl">{terms.smallPrint}</p>
       </div>
     </section>
   );

@@ -1,26 +1,29 @@
 import { CalendarDays } from 'lucide-react';
+import { GATHERINGS_QUERY } from '../lib/queries';
+import { useSanityData } from '../lib/useSanity';
 
 interface Gathering {
+  _id?: string;
   /**
-   * Free-text date label, shown as written. Recurring descriptions
-   * ("2nd Sunday of every month") and "TBC" are all valid.
+   * Free-text date label, shown as written, so recurring descriptions
+   * ("2nd Sunday of every month") work alongside fixed dates.
    */
-  date: string;
+  dateLabel: string;
   time: string;
   title: string;
   audience: string;
 }
 
-/** Edit these directly as the calendar changes. */
-const gatherings: Gathering[] = [
+/** Shipped fallback: used until Sanity responds, and if it never does. */
+const fallbackGatherings: Gathering[] = [
   {
-    date: '2nd Sunday of every month',
+    dateLabel: '2nd Sunday of every month',
     time: '13:00',
     title: 'Monthly general meeting',
     audience: 'All members',
   },
   {
-    date: 'Date set at the November meeting',
+    dateLabel: 'Date set at the November meeting',
     time: 'Confirmed to members',
     title: 'Annual year-end celebration',
     audience: 'Members and family',
@@ -28,7 +31,7 @@ const gatherings: Gathering[] = [
 ];
 
 export function Gatherings() {
-  const upcoming = gatherings;
+  const upcoming = useSanityData<Gathering[]>(GATHERINGS_QUERY, fallbackGatherings);
 
   return (
     <section id="gatherings" className="border-b border-stone-200 bg-white">
@@ -52,13 +55,13 @@ export function Gatherings() {
           <ul className="divide-y divide-stone-200 border-y border-stone-200">
             {upcoming.map((gathering) => (
               <li
-                key={`${gathering.date}-${gathering.title}`}
+                key={gathering._id ?? `${gathering.dateLabel}-${gathering.title}`}
                 className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 py-5"
               >
                 {/* Date block */}
                 <div className="sm:w-40 shrink-0">
                   <p className="text-sm font-semibold tracking-tight text-stone-900">
-                    {gathering.date}
+                    {gathering.dateLabel}
                   </p>
                   <p className="text-xs text-stone-500">{gathering.time}</p>
                 </div>

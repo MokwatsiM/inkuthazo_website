@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
-/node_modules
+# dependencies — unanchored so studio/node_modules is covered too
+node_modules
 /.pnp
 .pnp.js
 
@@ -11,6 +11,11 @@
 # production
 /build
 /dist
+studio/dist
+
+# Sanity
+.sanity/
+studio/.sanity/
 
 # high-res design sources (kept locally, not versioned)
 src/assets/Gemini_Generated_Image_*.png

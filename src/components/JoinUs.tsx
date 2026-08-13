@@ -1,6 +1,17 @@
 import { ExternalLink, CheckCircle, MessageCircle } from 'lucide-react';
+import { useMembershipTerms } from '../lib/useMembershipTerms';
 
 export function JoinUs() {
+  const terms = useMembershipTerms();
+
+  /** Restated at the point of commitment, from the same source as Membership. */
+  const summary = [
+    `${terms.joiningFee} joining fee, once-off`,
+    `${terms.monthlyContribution} per month, no hidden charges`,
+    `Covers you and up to ${terms.dependantLimit} dependants`,
+    `Funeral benefit starts after ${terms.waitingPeriodMonths} months`,
+  ];
+
   return (
     <section id="join" className="bg-white">
       <div className="max-w-6xl mx-auto py-10 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1.1fr,0.9fr] gap-10 lg:gap-14 items-start">
@@ -50,22 +61,12 @@ export function JoinUs() {
             </p>
 
             <div className="space-y-3">
-              <div className="flex items-center space-x-3 text-stone-700">
-                <CheckCircle className="h-5 w-5 text-ochre-700 flex-shrink-0" />
-                <span className="text-sm">R550 joining fee, once-off</span>
-              </div>
-              <div className="flex items-center space-x-3 text-stone-700">
-                <CheckCircle className="h-5 w-5 text-ochre-700 flex-shrink-0" />
-                <span className="text-sm">R200 per month, no hidden charges</span>
-              </div>
-              <div className="flex items-center space-x-3 text-stone-700">
-                <CheckCircle className="h-5 w-5 text-ochre-700 flex-shrink-0" />
-                <span className="text-sm">Covers you and up to 3 dependants</span>
-              </div>
-              <div className="flex items-center space-x-3 text-stone-700">
-                <CheckCircle className="h-5 w-5 text-ochre-700 flex-shrink-0" />
-                <span className="text-sm">Funeral benefit starts after 6 months</span>
-              </div>
+              {summary.map((line) => (
+                <div key={line} className="flex items-center space-x-3 text-stone-700">
+                  <CheckCircle className="h-5 w-5 text-ochre-700 flex-shrink-0" />
+                  <span className="text-sm">{line}</span>
+                </div>
+              ))}
             </div>
 
             <a
@@ -90,7 +91,7 @@ export function JoinUs() {
               href="https://wa.me/27734715116?text=Hi%20Inkuthazo%2C%20I%27d%20like%20to%20learn%20more%20about%20joining%20the%20social%20club."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center rounded-full border border-ochre-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2 bg-white text-ochre-800 text-sm font-semibold tracking-tight py-3 px-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2 hover:bg-ochre-50 transition-colors"
+              className="inline-flex w-full items-center justify-center rounded-full border border-ochre-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2 bg-white text-ochre-800 text-sm font-semibold tracking-tight py-3 px-4 hover:bg-ochre-50 transition-colors"
             >
               Chat on WhatsApp
               <MessageCircle className="ml-2 h-4 w-4" />

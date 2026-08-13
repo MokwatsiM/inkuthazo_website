@@ -38,7 +38,16 @@
       "Bash(perl -i -pe 's/py-2\\\\.5 px-4 hover:bg-ochre-50/py-3 px-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2 hover:bg-ochre-50/' src/components/JoinUs.tsx)",
       "Bash(node /Users/motebangmpmokwatsi/.claude/plugins/cache/impeccable/impeccable/4.0.4/skills/impeccable/scripts/detect.mjs --json src/components src/App.tsx index.html)",
       "Bash(echo \"detector exit: $?\")",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "mcp__Sanity__whoami",
+      "mcp__Sanity__list_datasets",
+      "mcp__Sanity__get_schema",
+      "mcp__Sanity__query_documents",
+      "mcp__Sanity__create_documents",
+      "mcp__Sanity__publish_documents",
+      "mcp__Sanity__cors_origins_list",
+      "mcp__Sanity__add_cors_origin",
+      "mcp__Sanity__get_project_studios"
     ],
     "deny": [],
     "ask": []
