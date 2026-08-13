@@ -1,4 +1,14 @@
-const questions = [
+import { FAQS_QUERY } from '../lib/queries';
+import { useSanityData } from '../lib/useSanity';
+
+interface Faq {
+  _id?: string;
+  question: string;
+  answer: string;
+}
+
+/** Shipped fallback: used until Sanity responds, and if it never does. */
+const fallbackQuestions: Faq[] = [
   {
     question: 'Is Inkuthazo only for funeral support?',
     answer:
@@ -41,26 +51,30 @@ const questions = [
   },
 ];
 
-/** FAQPage structured data, generated from the same source as the rendered list. */
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: questions.map((item) => ({
-    '@type': 'Question',
-    name: item.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: item.answer,
-    },
-  })),
-};
+/** FAQPage structured data, generated from the same list that is rendered. */
+function buildFaqSchema(questions: Faq[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: questions.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+}
 
 export function FrequentlyAsked() {
+  const questions = useSanityData<Faq[]>(FAQS_QUERY, fallbackQuestions);
+
   return (
     <section id="faq" className="border-b border-stone-200 bg-white">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema(questions)) }}
       />
       <div className="max-w-4xl mx-auto py-10 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
@@ -75,7 +89,7 @@ export function FrequentlyAsked() {
 
         <div className="divide-y divide-stone-200 border-y border-stone-200">
           {questions.map((item) => (
-            <details key={item.question} className="group py-5">
+            <details key={item._id ?? item.question} className="group py-5">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-left text-sm font-semibold text-stone-900">
                 {item.question}
                 <span className="text-xl font-normal text-ochre-700 transition-transform group-open:rotate-45" aria-hidden="true">

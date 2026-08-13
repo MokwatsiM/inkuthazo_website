@@ -1,0 +1,42 @@
+{
+  "name": "inkuthazo-website",
+  "private": true,
+  "version": "1.0.0",
+  "main": "package.json",
+  "license": "UNLICENSED",
+  "comment": "Sanity requires Node >=22.12. nvm defaults this machine to v20, so scripts put Homebrew's node first on PATH. /opt/homebrew/bin/node is a symlink Homebrew maintains across upgrades. Remove the prefix once the default node is 22.12+.",
+  "scripts": {
+    "build": "PATH=\"/opt/homebrew/bin:$PATH\" sanity build",
+    "deploy": "PATH=\"/opt/homebrew/bin:$PATH\" sanity deploy",
+    "deploy-graphql": "PATH=\"/opt/homebrew/bin:$PATH\" sanity graphql deploy",
+    "dev": "PATH=\"/opt/homebrew/bin:$PATH\" sanity dev",
+    "start": "PATH=\"/opt/homebrew/bin:$PATH\" sanity start",
+    "schema:deploy": "PATH=\"/opt/homebrew/bin:$PATH\" sanity schemas deploy"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "engines": {
+    "node": ">=22.12"
+  },
+  "dependencies": {
+    "@sanity/vision": "^6.9.2",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "sanity": "^6.9.2",
+    "styled-components": "^6.1.18"
+  },
+  "devDependencies": {
+    "@sanity/eslint-config-studio": "^6.0.0",
+    "@types/react": "^19.2.14",
+    "eslint": "^9.28",
+    "prettier": "^3.5",
+    "typescript": "^5.8"
+  },
+  "prettier": {
+    "bracketSpacing": false,
+    "printWidth": 100,
+    "semi": false,
+    "singleQuote": true
+  }
+}

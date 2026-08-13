@@ -1,9 +1,11 @@
+import { useMembershipTerms } from '../lib/useMembershipTerms';
+
 interface Step {
   title: string;
   description: string;
 }
 
-const steps: Step[] = [
+const buildSteps = (joiningFee: string, monthly: string, dependants: number): Step[] => [
   {
     title: 'Reach out',
     description:
@@ -17,7 +19,7 @@ const steps: Step[] = [
   {
     title: 'Confirm the contribution',
     description:
-      'Membership is a once-off R550 joining fee and R200 a month, which covers you and up to 3 registered dependants. A committee member confirms the payment arrangement with you.',
+      `Membership is a once-off ${joiningFee} joining fee and ${monthly} a month, which covers you and up to ${dependants} registered dependants. A committee member confirms the payment arrangement with you.`,
   },
   {
     title: 'Join the family',
@@ -27,6 +29,13 @@ const steps: Step[] = [
 ];
 
 export function HowItWorks() {
+  const terms = useMembershipTerms();
+  const steps = buildSteps(
+    terms.joiningFee,
+    terms.monthlyContribution,
+    terms.dependantLimit,
+  );
+
   return (
     <section id="how-it-works" className="border-b border-stone-200 bg-stone-50">
       <div className="max-w-6xl mx-auto py-10 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8">

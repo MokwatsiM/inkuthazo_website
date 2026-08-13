@@ -1,6 +1,15 @@
 import { Sparkles } from 'lucide-react';
 import { useState } from 'react';
-import groupPhoto from '../assets/update_group_photo.webp';
+import { urlFor, type SanityImage } from '../lib/image';
+import { SITE_SETTINGS_QUERY } from '../lib/queries';
+import { useMembershipTerms } from '../lib/useMembershipTerms';
+import { useSanityData } from '../lib/useSanity';
+
+interface SiteSettings {
+  heroImage?: SanityImage;
+}
+
+const FALLBACK_ALT = 'Inkuthazo Social Club members gathered together';
 
 const values = [
   'Unity',
@@ -14,7 +23,29 @@ const values = [
 ];
 
 export function Hero() {
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const [loadedSrc, setLoadedSrc] = useState<string | null>(null);
+  const terms = useMembershipTerms();
+  const settings = useSanityData<SiteSettings>(SITE_SETTINGS_QUERY, {});
+
+  /*
+   * The hero photograph comes from the Studio. There is no bundled fallback:
+   * showing the wrong image would be worse than showing none, so until Sanity
+   * responds the frame holds its aspect ratio and fills with the blur
+   * placeholder once available. Set it under Site settings in the Studio.
+   */
+  const sanityHero = settings.heroImage?.asset ? settings.heroImage : null;
+  const heroSrc = sanityHero
+    ? urlFor(sanityHero).width(1200).height(900).fit('crop').auto('format').quality(80).url()
+    : null;
+  const heroAlt = sanityHero?.alt || FALLBACK_ALT;
+  const lqip = sanityHero?.asset?.metadata?.lqip;
+
+  /*
+   * Track which src finished loading rather than a bare boolean, so swapping
+   * to a Studio image fades the new one in instead of inheriting the previous
+   * image's loaded state.
+   */
+  const isLoaded = loadedSrc === heroSrc;
 
   return (
     <div id="home" className="relative bg-stone-50 pt-16 border-b border-stone-200">
@@ -88,11 +119,15 @@ export function Hero() {
                 <p className="text-xs text-stone-500">Serving Ratanda since</p>
               </div>
               <div>
-                <p className="text-xl sm:text-2xl font-bold tracking-tight text-stone-900">R200</p>
+                <p className="text-xl sm:text-2xl font-bold tracking-tight text-stone-900">
+                  {terms.monthlyContribution}
+                </p>
                 <p className="text-xs text-stone-500">A month, all in</p>
               </div>
               <div>
-                <p className="text-xl sm:text-2xl font-bold tracking-tight text-stone-900">R7 000</p>
+                <p className="text-xl sm:text-2xl font-bold tracking-tight text-stone-900">
+                  {terms.memberPayout}
+                </p>
                 <p className="text-xs text-stone-500">Funeral benefit</p>
               </div>
             </div>
@@ -100,19 +135,25 @@ export function Hero() {
 
           {/* Right: photograph */}
           <div className="relative">
-            <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-stone-200 bg-stone-100">
-              <img
-                className={`w-full h-full object-cover object-center transition-opacity duration-700 ${
-                  imageLoaded ? 'opacity-100' : 'opacity-0'
-                }`}
-                src={groupPhoto}
-                alt="Inkuthazo Social Club members gathered together"
-                width={1200}
-                height={900}
-                loading="eager"
-                fetchPriority="high"
-                onLoad={() => setImageLoaded(true)}
-              />
+            <div
+              className="aspect-[4/3] overflow-hidden rounded-2xl border border-stone-200 bg-stone-100 bg-cover bg-center"
+              style={lqip ? { backgroundImage: `url(${lqip})` } : undefined}
+            >
+              {heroSrc && (
+                <img
+                  key={heroSrc}
+                  className={`w-full h-full object-cover object-center transition-opacity duration-700 ${
+                    isLoaded ? 'opacity-100' : 'opacity-0'
+                  }`}
+                  src={heroSrc}
+                  alt={heroAlt}
+                  width={1200}
+                  height={900}
+                  loading="eager"
+                  fetchPriority="high"
+                  onLoad={() => setLoadedSrc(heroSrc)}
+                />
+              )}
             </div>
             <div className="absolute left-4 right-4 bottom-4 rounded-xl border border-white/70 bg-white/95 p-4 shadow-lg backdrop-blur sm:left-6 sm:right-6 sm:bottom-6">
               <p className="text-xs font-semibold uppercase tracking-tight text-ochre-700">Your circle, beyond the moment</p>
